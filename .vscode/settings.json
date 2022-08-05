@@ -1,0 +1,11 @@
+{
+  "cSpell.words": [
+    "FPDF"
+  ],
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.forceUpload": true,
+  "sync.forceDownload": true,
+  "sync.gist": "haamid10",
+  "editor.defaultFormatter": "bradlc.vscode-tailwindcss"
+}
