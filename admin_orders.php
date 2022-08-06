@@ -76,6 +76,8 @@ if(isset($_GET['delete'])){
             <input type="submit" value="update" name="update_order" class="option-btn">
             <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('delete this order?');" class="delete-btn">delete</a>
          </form>
+        
+         
       </div>
       <?php
          }
@@ -83,6 +85,7 @@ if(isset($_GET['delete'])){
          echo '<p class="empty">no orders placed yet!</p>';
       }
       ?>
+
    </div>
 
 </section>
