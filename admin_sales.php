@@ -77,11 +77,10 @@ if(isset($_GET['delete'])){
       }else{
          echo '<p class="empty">no orders placed yet!</p>';
       }
+      
       ?>
    </div>
 
- 
-        
         </select>
  <button type="submit" name="button"> Generete Report</button>
 
