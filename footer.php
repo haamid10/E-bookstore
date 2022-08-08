@@ -20,22 +20,19 @@
 
       <div class="box">
          <h3>contact info</h3>
-         <p> <i class="fas fa-phone"></i> +123-456-7890 </p>
-         <p> <i class="fas fa-phone"></i> +111-222-3333 </p>
-         <p> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </p>
-         <p> <i class="fas fa-map-marker-alt"></i> mumbai, india - 400104 </p>
+         <p> <i class="fas fa-phone"></i>+252-63-4125122 </p>
+         <p> <i class="fas fa-envelope"></i>iqraonlinebookshop1@gmail.com </p>
+         <p> <i class="fas fa-map-marker-alt"></i> 📌 Hargeisa, Somaliland  </p>
       </div>
 
       <div class="box">
          <h3>follow us</h3>
-         <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
-         <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-         <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
-         <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+         <a href="https://www.facebook.com/maktabaddaiqra/"> <i class="fab fa-facebook-f"></i> facebook </a>
+         <a href="https://www.instagram.com/iqrabookss/"> <i class="fab fa-instagram"></i> instagram </a>
       </div>
 
    </div>
 
-   <p class="credit"> &copy; copyright  @ <?php echo date('Y'); ?> by <span>mr. web designer</span> </p>
+   <p class="credit"> &copy; copyright  @ <?php echo date('Y'); ?> by <span>Iqra books</span> </p>
 
 </section>
