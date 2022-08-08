@@ -44,11 +44,17 @@ if(isset($_GET['delete'])){
 <body>
 
 
- 
-<form class="bg-blue-50 m-36 w-fit h-auto text-xl" action="pdfreport.php" target="_blank"  method="POST">
 
+<form class="bg-blue-50 m-36 w-fit h-auto text-xl" action=""   method="POST">
+<button onclick="myBun">print</button>            
+         <script type="text/javascript">
+       function myBun(){
+          windows.print();
+       }
+            </script>
 <h1 class="title">sales</h1>
-<select name="model" id=""></select>
+
+      </div>
    <div class="box-container" >
       <?php
       $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
@@ -65,13 +71,13 @@ if(isset($_GET['delete'])){
          <p> total products : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
          <p> total price : <span>$<?php echo $fetch_orders['total_price']; ?>/-</span> </p>
          <p> payment method : <span><?php echo $fetch_orders['method']; ?></span> </p>
-         <form action="" method="post">
-            <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
-            
-            <input type="submit" value="update" name="update_order" class="option-btn">
-            <a href="admin_sales.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('delete this order?');" class="delete-btn">delete</a>
-         </form>
-      </div>
+         <button onclick="myFun()">print</button>            
+         <script type="text/javascript">
+
+       function myFun(){
+          window.print();
+       }
+            </script>
       <?php
          }
       }else{
