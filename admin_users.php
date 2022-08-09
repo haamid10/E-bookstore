@@ -81,6 +81,7 @@ if(isset($_POST['submit'])){
          <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
          <p> user type : <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
          <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete user</a>
+         <a type="submit" value="update"  class="option-btn" href="admin_edit.php">click here </a>
       </div>
       <?php
          };
@@ -116,16 +117,14 @@ if(isset($message)){
          <option value="admin">admin</option>
       </select>
       <input type="submit" name="submit" value="register now" class="btn">
-     
+
+    
+      
    </form>
 
 </div>
 
 </section>
-
-
-
-
 
 
 
