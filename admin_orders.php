@@ -47,13 +47,7 @@ if(isset($_GET['delete'])){
 <?php include 'admin_header.php'; ?>
 
 <section class="orders">
-<button onclick="myFun">print</button>            
-         <script type="text/javascript">
-       function myFun(){
-          window.print();
-       }
-            </script>
-<h1 class="title">sales</h1>
+
 
       </div>
    <h1 class="title">placed orders</h1>
@@ -81,14 +75,8 @@ if(isset($_GET['delete'])){
                <option value="pending">pending</option>
                <option value="completed">completed</option>
             </select>
-            <button onclick="myFun()">print</button>            
-         <script type="text/javascript">
-
-       function myFun(){
-          window.print();
-       }
-            </script>
-            
+         
+            <input type="submit" value="update" name="update_order" class="option-btn">
             <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('delete this order?');" class="delete-btn">delete</a>
             
          </form>
