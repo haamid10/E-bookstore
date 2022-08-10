@@ -38,11 +38,15 @@ if(isset($_POST['send'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>contact</title>
 
+   <script src="https://cdn.tailwindcss.com"></script>
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
+   
+<link href="style.css" rel="stylesheet">
+
 
 </head>
 <body>
@@ -68,7 +72,46 @@ if(isset($_POST['send'])){
 </section>
 
 
-
+<div class="w-fit mx-64 rounded-lg mb-12 mt-12 bg-gray-900">
+    <section class="relative block py-24 bg-blueGray-900">
+       <div class="container  mx-auto px-4">
+          <div class="mb-12  flex flex-wrap -mx-4 justify-center">
+             <div class="px-4 relative w-full lg:w-8/12 text-center">
+                <span class="text-teal-500 bg-teal-200 text-xs font-bold inline-block py-1 uppercase uppercase last:mr-0 mr-1 leading-tight rounded px-2">Message us</span>
+                <h3 class="text-6xl font-bold mt-3 mb-1 text-white">Type in the bellow form</h3>
+                <p class="mt-2 mb-4 text-xl leading-relaxed text-white opacity-75">They say there's no future for the street rascals, nothing for them, leave them to fall. But it isn't always how you would like it to be, especially when you do nothing for yourself.</p>
+             </div>
+          </div>
+          <div class="flex flex-wrap justify-center">
+             <div class="w-full lg:w-6/12 px-4">
+                <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200">
+                   <div class="flex-auto p-5 lg:p-10">
+                      <h4 class="text-2xl font-semibold">Want to work with us?</h4>
+                      <p class="leading-relaxed mt-1 mb-4 text-blueGray-500">Complete this form and we will get back to you in 24 hours.</p>
+                      <div class="mt-8">
+                         <div class="relative w-full mb-3">
+                            <label class="block uppercase text-blueGray-500 text-xs font-bold mb-2 ml-1">Full Name</label>
+                            <input placeholder="Full Name" type="text" class="px-3 py-3 placeholder-blueGray-400 text-blueGray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 border-transparent">
+                         </div>
+                         <div class="relative w-full mb-3">
+                            <label class="block uppercase text-blueGray-500 text-xs font-bold mb-2 ml-1">Email</label>
+                            <input placeholder="Email" type="email" class="px-3 py-3 placeholder-blueGray-400 text-blueGray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 border-transparent">
+                         </div>
+                         <div class="relative w-full mb-3">
+                            <label class="block uppercase text-blueGray-500 text-xs font-bold mb-2 ml-1">Message</label>
+                            <textarea placeholder="Type a message..." type="textarea" rows="4" cols="80" class="px-3 py-3 placeholder-blueGray-400 text-blueGray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 border-transparent"></textarea>
+                         </div>
+                      </div>
+                      <div class="text-center mt-6">
+                         <button class="text-xs px-4 py-2 shadow hover:shadow-md text-white bg-blueGray-800 border-blueGray-800 active:bg-blueGray-900 active:border-blueGray-900 rounded outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold">Send Message</button>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </section>
+ </div>
 
 
 
