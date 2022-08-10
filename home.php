@@ -94,6 +94,9 @@ if(isset($_POST['add_to_cart'])){
 
 </section>
 
+<!-- tailwind landing 1 -->
+
+<!-- end -->
 
 
 <?php include 'footer.php'; ?>

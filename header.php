@@ -10,7 +10,7 @@ if(isset($message)){
    }
 }
 ?>
-<link href="stylse.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 <body>
 <header class="header">
 
@@ -53,17 +53,17 @@ if(isset($message)){
  <!--  -->
 
  <div class="w-full">
-  <div class="p-0 flex items-center overflow-hidden min-h-screen-75">
-    <div class="container mx-auto px-4">
+  <div class="p-0 flex items-center text-xl overflow-hidden min-h-screen-75">
+    <div class=" mx-auto px-4">
       <div class="items-center text-left flex flex-wrap -mx-4">
         <div class="px-4 relative w-full lg:w-6/12">
-          <h1 class="text-4xl font-bold leading-tight">Design with us, speed your development...</h1>
-          <p class="mt-4 mb-4 text-xl leading-relaxed text-blueGray-400">We aim high at being focused on building relationships with our clients and community. Using our creative gifts drives this foundation.</p>
+          <h1 class="text-7xl font-bold leading-tight ">Read with us,to speed your development...</h1>
+          <p class="mt-4 mb-4 text-xl leading-relaxed text-blueGray-400">We aim high at being focused on building relationships with our clients and community. Using our creative books drives this foundation.</p>
           <div class="flex flex-wrap -mx-4 mt-8">
             <div class="px-4 pr-2 relative w-full sm:w-8/12">
-              <div class="mb-3 pt-0"><input placeholder="Your email here" class="border-blueGray-300 px-3 py-2 text-sm  w-full placeholder-blueGray-200 text-blueGray-700 relative bg-white rounded-md outline-none focus:ring focus:ring-lightBlue-500 focus:ring-1 focus:border-lightBlue-500 border border-solid transition duration-200 "></div>
+              <div class="mb-3 pt-0"></div>
             </div>
-            <div class="px-4 pl-0 relative w-full sm:w-4/12"><button class="inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold last:mr-0 mr-2  text-white bg-pink-500 border-pink-500 active:bg-pink-600 active:border-pink-600 text-sm px-6 py-2 shadow hover:shadow-lg rounded-md">Join us</button></div>
+            <div class="px-4 pl-0 relative w-16 sm:w-8/12"><a href="login.php" class="inline-block outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out w-44 uppercase border border-solid font-bold last:mr-0 mr-2  text-white bg-pink-500 border-pink-500 active:bg-pink-600 active:border-pink-600 text-xl px-6 py-4  shadow hover:shadow-lg rounded-md">Join us</a></div>
           </div>
         </div>
         <div class="px-4 relative w-full lg:w-6/12"><img src="https://demos.creative-tim.com/notus-pro-react/static/media/example-17.76927438.svg" class="w-full lg:ml-12" alt="..."></div>
