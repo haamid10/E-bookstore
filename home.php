@@ -49,10 +49,10 @@ if(isset($_POST['add_to_cart'])){
    
 <?php include 'header.php'; ?>
 
--->
 
 
-<section class="home">
+
+<!-- <section class="home">
 
    <div class="content">
       <h3>Hand Picked Book to your door.</h3>
@@ -60,7 +60,14 @@ if(isset($_POST['add_to_cart'])){
       <a href="about.php" class="white-btn">discover more</a>
    </div>
 
-</section>
+</section> -->
+
+
+<!-- content -->
+
+
+
+<!-- productss -->
 
 </div>
 <section class="relative w-full h-full">
