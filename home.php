@@ -65,7 +65,7 @@ if(isset($_POST['add_to_cart'])){
  <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
     <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
 
-    <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+    <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 rounded-md shadow-sm p-4  shadow-gray-600 sm:text-4xl md:mx-auto">
         <span class="relative inline-block">
           <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-gray-400 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
             <defs>
@@ -84,7 +84,7 @@ if(isset($_POST['add_to_cart'])){
 
    <div class="grid max-w-screen-md gap-10 md:grid-cols-2 sm:mx-auto">
    <div>
-        <div class="p-8 bg-gray-900 rounded">
+        <div class="p-4 bg-gray-800 rounded-xl shadow-lg  shadow-black">
           <div class="mb-4 text-center">
 
       <?php  
@@ -92,16 +92,21 @@ if(isset($_POST['add_to_cart'])){
          if(mysqli_num_rows($select_products) > 0){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>
-     <form action="" method="post" class="box">
-      <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
-      <div class="name"><?php echo $fetch_products['name']; ?></div>
-      <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+      <div class="mb-4 text-center ">
+     <form action="" method="post" class="flex flex-col items-center">
+      <img class="relative  items-center text-white rounded-xl w-96 h-auto" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
+     
+      <div class="text-4xl font-medium tracking-wide text-white"><?php echo $fetch_products['name']; ?></div>
+            
+      
+      <div class=" text-2xl font-semibold text-white lg:text-3xl absolute bg-orange-400 ml-96  rounded-xl p-1"">$<?php echo $fetch_products['price']; ?>/-</div>
       <input type="number" min="1" name="product_quantity" value="1" class="qty">
       <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
       <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
       <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
       <input type="submit" value="add to cart" name="add_to_cart" class="btn">
      </form>
+      </div>
       <?php
          }
       }else{
