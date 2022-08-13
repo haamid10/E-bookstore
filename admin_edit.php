@@ -7,48 +7,55 @@ include 'admin_header.php';
 
 session_start();
 
-$admin_id = $_SESSION['admin_id'];
-
-if(!isset($admin_id)){
-   header('location:login.php');
-}
-
-if(isset($_POST['update_user'])){
-
-   $order_update_id = $_POST['name'];
-   $update_payment = $_POST['user_type'];
-   mysqli_query($conn, "UPDATE `users` SET user_type = '$user_type' WHERE id = '$order_update_id'") or die('query failed');
-   $message[] = 'acount edit  has been updated!';
-
-}
 
 
+ 
 
+// php code to Update data from mysql database Table
+// include 'config.php';
 
+// if(isset($_GET['submit'])){
 
-if(isset($_POST['submit'])){
-
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
-   $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+if(isset($_POST['update_user']))
+{
+    
+   $hostname = "localhost";
+   $username = "root";
+   $pass= "";
+   $databaseName = "shop_db";
+   
+   $connect = mysqli_connect($hostname, $username, $pass, $databaseName);
+   
+   // get values form input text and number
+   
+   $id = $_POST['id'];
+   $name = $_POST['name'];
+   $email = $_POST['email'];
+   $password = md5($_POST['password']);
    $user_type = $_POST['user_type'];
+  //  $pass =($connect, md5($_POST['password']));
 
-   $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
-
-   if(mysqli_num_rows($select_users) > 1){
-      $message[] = 'user already exist!';
+           
+   // mysql query to Update data
+   $password = $_POST['password'];
+   $query = "UPDATE `users` SET `name`='".$name."',`email`='".$email."',`password`= '".$password."', `user_type`= '".$user_type."' WHERE `id` = $id";
+   
+   $result = mysqli_query($connect, $query);
+   
+   if($result)
+   {
+     header("location:home.php");
+       echo 'Data Updated';
    }else{
-      if($pass != $cpass){
-         $message[] = 'confirm password not matched!';
-      }else{
-         mysqli_query($conn, "INSERT INTO `users`(name, email, password, user_type) VALUES('$name', '$email', '$cpass', '$user_type')") or die('query failed');
-         $message[] = 'registered successfully!';
-         header('location:login.php');
-      }
+       echo 'Data Not Updated';
    }
-
+   mysqli_close($connect);
+   die();
 }
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -71,14 +78,16 @@ if(isset($_POST['submit'])){
 
 
 <form action="" method="post">
-      <h3>register now</h3>
-      <input type="text" name="name" placeholder="enter your name" required class="box">
-      <input type="email" name="email" placeholder="enter your email" required class="box">
-      <input type="password" name="password" placeholder="enter your password" required class="box">
-      <input type="password" name="cpassword" placeholder="confirm your password" required class="box">
+      <h3>UPDATE NOW</h3>
+      <input type="number" name="id" placeholder="enter your id" required class="box"></br>
+      <input type="text" name="name" placeholder="enter your name" required class="box"></br>
+      <input type="email" name="email" placeholder="enter your email" required class="box"></br>
+      <input type="password" name="password" placeholder="enter your password" required class="box"></br>
+      
       <select name="user_type" class="box">
       
          <option value="user">user</option>
+         <option value="admin">admin</option>
 
       </select>
       <input type="submit" value="update" name="update_user" class="option-btn">

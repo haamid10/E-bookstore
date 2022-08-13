@@ -62,9 +62,17 @@ if(isset($_POST['submit'])){
    <link rel="stylesheet" href="css/admin_style.css">
 
 </head>
+
 <body>
    
 <?php include 'admin_header.php'; ?>
+
+<section class="search-form">
+   <form action="" method="post">
+      <input type="text" name="search" placeholder="search products..." class="box">
+      <input type="submit" name="submit" value="search" class="btn">
+   </form>
+</section>
 
 <section class="users">
 
@@ -89,6 +97,8 @@ if(isset($_POST['submit'])){
 
 
    </div>
+   <a href="admin_registration.php" type="submit" name="submit" value="register now" class="btn">register</a>
+
 
    
 <?php
