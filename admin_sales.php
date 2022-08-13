@@ -1,3 +1,17 @@
+<style>
+    table td,table th{
+        padding: 3px !important;
+    }
+</style>
+<?php 
+$date_start = isset($_GET['date_start']) ? $_GET['date_start'] :  date("Y-m-d",strtotime(date("Y-m-d")." -7 days")) ;
+$date_end = isset($_GET['date_end']) ? $_GET['date_end'] :  date("Y-m-d") ;
+?>
+
+
+
+
+
 <?php
 
 include 'config.php';
@@ -71,13 +85,7 @@ if(isset($_GET['delete'])){
          <p> total products : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
          <p> total price : <span>$<?php echo $fetch_orders['total_price']; ?>/-</span> </p>
          <p> payment method : <span><?php echo $fetch_orders['method']; ?></span> </p>
-         <button onclick="myFun()">print</button>            
-         <script type="text/javascript">
 
-       function myFun(){
-          window.print();
-       }
-            </script>
       <?php
          }
       }else{
@@ -85,12 +93,107 @@ if(isset($_GET['delete'])){
       }
       
       ?>
-   </div>
 
-        </select>
- <button type="submit" name="button"> Generete Report</button>
-
+   </div></div>
 </form>
+
+
+
+       
+   <table class="table table-bordered">
+                <colgroup>
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                    <col width="60">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>user Id</th>
+                        <th>name</th>
+                        <th>phone</th>
+                        <th>address</th>
+                        <th>email</th>
+                        <th>quantity</th>
+                        <th>price</th>
+                        <th>payment method</th>
+                        <th>placed on</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                $i=1;
+      $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
+      if(mysqli_num_rows($select_orders) > 0){
+         while($fetch_orders = mysqli_fetch_assoc($select_orders)){
+      ?>
+                    <tr>  <td class="text-center"><?php echo $i++ ?></td>
+                        <td> <span><?php echo $fetch_orders['user_id']; ?></td>
+                        <td>
+                            <p class="m-0"><?php echo $fetch_orders['name'] ?></p>
+                        </td>
+                        <td>
+                            <p class="m-0"><?php echo $fetch_orders['number'] ?></p>
+                        </td>
+                        <td>
+                            <p class="m-0"><?php echo $fetch_orders['address']?></p>
+                        </td>
+                        <td>
+                            <p class="m-0"><?php echo $fetch_orders['email'] ?></p> </td>
+                        <td class="text-center"><?php echo $fetch_orders['total_products']?></td>
+                       
+                        <td class="text-right"><?php echo $fetch_orders['total_price'] ?></td>
+                        <td class="text-center"><?php echo $fetch_orders['method']?></td>
+                    </tr>
+                   
+                    <?php if($qry->num_rows <= 0): ?>
+                    <tr>
+                        <td class="text-center" colspan="20">No Data...</td>
+                    </tr>
+                    <?php endif; ?>
+      
+
+                </tbody>
+                <?php
+         }
+      }else{
+         echo '<p class="empty">no orders placed yet!</p>';
+      }
+      
+      ?>
+               <button onclick="myFun()">print111</button>            
+         <script type="text/javascript">
+
+       function myFun(){
+          window.print();
+       }
+            </script>
+            </table>
+           
+       
+   
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
