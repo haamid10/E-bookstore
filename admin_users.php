@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
    $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
    if(mysqli_num_rows($select_users) > 0){
-      $message[] = 'user already exist!';
+      $message[] = 'user!';
    }else{
       if($pass != $cpass){
          $message[] = 'confirm password not matched!';
@@ -76,38 +76,55 @@ if(isset($_POST['search'])){
 <?php include 'admin_header.php';
   ?>
 
+<div class="heading">
+   <h3>search page</h3>
+   <p> <a href="home.php">home</a> / search </p>
+</div>
+
 <section class="search-form">
-
-
-<form  method="post" name="searchdeals">
-                <h5 class="display-5 text-left py-3">Find a favourite vehicle </h5>
-                <div class="form-group select">
-                    <select name="manufacturer_code" id="manufacturer_code" class="form-control" onchange="getState(this.value);">
-                        <option selected>Select Brand</option>
-                        <?php $ret="SELECT * FROM shop_db";
-                        $query= $dbh -> prepare($ret);
-                        $query-> execute();
-                        $results = $query -> fetchAll(PDO::FETCH_OBJ);
-                        if($query -> rowCount() > 0)
-                        {
-                            foreach($results as $result)
-                            {
-                                ?>
-                                <option value="<?php echo htmlentities($result->manufacturer_code);?>"><?php echo htmlentities($result->manufacturer_name);?></option>
-                            <?php }} ?>
-                    </select>
-                </div>
-                <div class="form-group select">
-                    <select name="model_code" id="model_code" class="form-control">
-                        <option selected>Select Model</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <button type="submit" name="searchdeals" value="Filter" class="btn btn-block btn-warning"><i class="fa fa-search" aria-hidden="true"></i> Search Vehicle</button>
-                </div>
-            </form>
-   
+   <form action="" method="post">
+      <input type="text" name="search" placeholder="search products..." class="box">
+      <input type="submit" name="submit" value="search" class="btn">
+   </form>
 </section>
+
+<section class="users" style="padding-top: 0;">
+
+   <div class="box-container">
+   <?php
+      if(isset($_POST['submit'])){
+         $search_item = $_POST['search'];
+         $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE name LIKE '%{$search_item}%'") or die('query failed');
+         if(mysqli_num_rows($select_users) > 0){
+         while($fetch_users = mysqli_fetch_assoc($select_users)){
+   ?>
+   <form action="" method="post" class="box">
+     
+      <input type="number"  class="qty" name="product_quantity" min="1" value="1">
+      <input type="hidden" name="name" value="<?php echo $fetch_users['name']; ?>">
+      <input type="hidden" name="email" value="<?php echo $fetch_users['price']; ?>">
+      <input type="hidden" name="user_type" value="<?php echo $fetch_users['image']; ?>">
+      <p> user id : <span><?php echo $fetch_users['id']; ?></span> </p>
+         <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
+         <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
+         <p> user type : <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
+         <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete user</a>
+         <a type="submit" value="update"  class="option-btn" href="admin_edit.php">click here </a>
+   </form>
+   <?php
+            }
+         }else{
+            echo '<p class="empty">no result found!</p>';
+         }
+      }else{
+         echo '<p class="empty">search something!</p>';
+      }
+   ?>
+   </div>
+  
+
+</section>
+
 
 
 <section class="users">

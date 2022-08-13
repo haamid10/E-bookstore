@@ -126,6 +126,11 @@ if(isset($_POST['edit']))
    $connect = mysqli_connect($hostname, $username, $pass, $databaseName);
    
    // get values form input text and number
+
+   
+          
+                 
+        
    
    $id = $_POST['id'];
    $name = $_POST['name'];
