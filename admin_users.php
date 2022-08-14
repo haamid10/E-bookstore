@@ -4,11 +4,6 @@ include 'config.php';
 
 session_start();
 
-$admin_id = $_SESSION['admin_id'];
-
-if(!isset($admin_id)){
-   header('location:login.php');
-}
 
 if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];
@@ -78,7 +73,7 @@ if(isset($_POST['search'])){
 
 <div class="heading">
    <h3>search page</h3>
-   <p> <a href="home.php">home</a> / search </p>
+   <p> <a href="admin_users.php">users</a> / search </p>
 </div>
 
 <section class="search-form">
@@ -128,16 +123,7 @@ if(isset($_POST['search'])){
 
 
 <section class="users">
-<form class="form-inline ml-0 ml-md-3">
-          <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-              <button class="btn btn-navbar" type="submit">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-          </div>
-        </form>
+
 
    <h1 class="title"> user accounts </h1>
 
