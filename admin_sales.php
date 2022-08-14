@@ -3,10 +3,6 @@
         padding: 3px !important;
     }
 </style>
-<?php 
-$date_start = isset($_GET['date_start']) ? $_GET['date_start'] :  date("Y-m-d",strtotime(date("Y-m-d")." -7 days")) ;
-$date_end = isset($_GET['date_end']) ? $_GET['date_end'] :  date("Y-m-d") ;
-?>
 
 
 
@@ -42,7 +38,6 @@ if(isset($_GET['delete'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'admin_header.php'; ?>
 
 <head>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -56,7 +51,10 @@ if(isset($_GET['delete'])){
   <title>Document</title>
 </head>
 <body>
-
+<div class="heading">
+   <h3>sales page</h3>
+   <p> <a href="admin_page.php">home</a> / search </p>
+</div>
 
 
 
@@ -127,7 +125,7 @@ if(isset($_GET['delete'])){
                 <?php
          }
       }else{
-         echo '<p class="empty">no orders placed yet!</p>';
+         echo '<p class="empty">no sales placed yet!</p>';
       }
       
       ?>
