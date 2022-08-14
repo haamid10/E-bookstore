@@ -195,6 +195,7 @@ if(isset($_POST['add_to_cart'])){
   }
   ```
 -->
+
 <div class="bg-white">
   <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
     <h2 class="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
@@ -209,20 +210,20 @@ if(isset($_POST['add_to_cart'])){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>
 
-        <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="Front of men&#039;s Basic Tee in black." class="w-fit h-full object-center object-cover lg:w-fit lg:h-full">
+        <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover p-2 lg:w-full lg:h-full">
         
         </div>
         <div class="mt-4 flex justify-between">
           <div>
-            <h3 class="text-sm text-gray-700">
+            <h3 class="text-sm text-gray-900">
               <a href="#">
                 <span aria-hidden="true" class="absolute inset-0"></span>
-                Basic Tee
+                <?php echo $fetch_products['name']; ?>
               </a>
             </h3>
             <p class="mt-1 text-sm text-gray-500">Black</p>
           </div>
-          <p class="text-sm font-medium text-gray-900">$35</p>
+          <p class="text-sm font-medium text-gray-900">$<?php echo $fetch_products['price']; ?></p>
         </div>
       </div>
 
