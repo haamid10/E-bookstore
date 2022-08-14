@@ -43,7 +43,7 @@ if(isset($_POST['add_to_cart'])){
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
-   
+<script src="https://cdn.tailwindcss.com"></script>
 <link href="style.css" rel="stylesheet">
 
 
@@ -97,7 +97,7 @@ if(isset($_POST['add_to_cart'])){
 
    <div class="grid max-w-screen-md gap-10 md:grid-cols-2 sm:mx-auto">
    <div>
-        <div class="p-4 bg-gray-800 rounded-xl shadow-lg  shadow-black">
+        <div class="p-4 bg-gray-200 rounded-xl shadow-lg shadow-black">
           <div class="mb-4 text-center">
 
       <?php  
@@ -112,14 +112,17 @@ if(isset($_POST['add_to_cart'])){
       <div class="text-4xl font-medium tracking-wide text-white"><?php echo $fetch_products['name']; ?></div>
             
       
-      <div class=" text-2xl font-semibold text-white lg:text-3xl absolute bg-orange-400 ml-96  rounded-xl p-1"">$<?php echo $fetch_products['price']; ?>/-</div>
-      <input type="number" min="1" name="product_quantity" value="1" class="qty">
+      <div class=" text-2xl font-semibold text-black lg:text-3xl absolute bg-orange-400 ml-96  rounded-xl p-1"">$<?php echo $fetch_products['price']; ?>/-</div>
+
+      <div class=" absolute bg-gray-600 w-96 h-32 px-32 bottom-36  ">
+      <!-- <input type="number" min="1" name="product_quantity" value="1" class="qty"> -->
       <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
       <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
       <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
       <input  type="submit"  value="add to cart" name="add_to_cart"
             class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
           >
+          </div>
      </form>
      
       </div>

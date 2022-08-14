@@ -11,7 +11,6 @@ if(isset($message)){
 }
 ?>
 <link href="style.css" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
 
 
 <body>
