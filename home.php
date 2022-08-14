@@ -71,9 +71,35 @@ if(isset($_POST['add_to_cart'])){
 
 
 <!-- productss -->
+<!-- 
+<section class="relative w-full h-full">
+
+   <div class=" w-full bg-gray-50 lg:block h-96"">
+
+      <?php
+         $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+         if(mysqli_num_rows($select_products) > 0){
+            while($fetch_products = mysqli_fetch_assoc($select_products)){
+      ?>
+      <div class="box">
+         <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
+         <div class="name"><?php echo $fetch_products['name']; ?></div>
+         <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+         <a href="admin_products.php?update=<?php echo $fetch_products['id']; ?>" class="option-btn">update</a>
+         <a href="admin_products.php?delete=<?php echo $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
+      </div>
+      <?php
+         }
+      }else{
+         echo '<p class="empty">no products added yet!</p>';
+      }
+      ?>
+   </div>
+
+</section> -->
 
 </div>
-<section class="relative w-full h-full">
+<section class="relative w-full h-full flex flex-row">
 <div class="absolute hidden w-full bg-gray-50 lg:block h-96"></div>
  <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
     <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
@@ -97,8 +123,8 @@ if(isset($_POST['add_to_cart'])){
 
    <div class="grid max-w-screen-md gap-10 md:grid-cols-2 sm:mx-auto">
    <div>
-        <div class="p-4 bg-gray-200 rounded-xl shadow-lg shadow-black">
-          <div class="mb-4 text-center">
+        <div class="p-4  bg-gray-50 rounded-xl shadow-lg shadow-black">
+          <div class="mb-4 text-center flex flex-col">
 
       <?php  
          $select_products = mysqli_query($conn, "SELECT * FROM `products` LIMIT 6") or die('query failed');
@@ -112,9 +138,9 @@ if(isset($_POST['add_to_cart'])){
       <div class="text-4xl font-medium tracking-wide text-white"><?php echo $fetch_products['name']; ?></div>
             
       
-      <div class=" text-2xl font-semibold text-black lg:text-3xl absolute bg-orange-400 ml-96  rounded-xl p-1"">$<?php echo $fetch_products['price']; ?>/-</div>
+      <div class="flex text-2xl font-semibold text-black lg:text-3xl absolute bg-orange-400 ml-96  rounded-xl p-1"">$<?php echo $fetch_products['price']; ?>/-</div>
 
-      <div class=" absolute bg-gray-600 w-96 h-32 px-32 bottom-36  ">
+     
       <!-- <input type="number" min="1" name="product_quantity" value="1" class="qty"> -->
       <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
       <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
