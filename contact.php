@@ -53,10 +53,7 @@ if(isset($_POST['send'])){
    
 <?php include 'header.php'; ?>
 
-<div class="heading">
-   <h3>contact us</h3>
-   <p> <a href="home.php">home</a> / contact </p>
-</div>
+
 
 <section class="contact">
 
