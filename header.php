@@ -68,7 +68,7 @@ echo '<script>document.querySelector(".edit-product-form").style.display = "none
             <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
             <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
             <a href="logout.php" class="delete-btn">logout</a>
-            <a href="Profile_edit_form.php" name="update">UPDATE</a>
+            <a href="update_account.php" name="update">UPDATE</a>
 
          </div>
       </div>
