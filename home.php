@@ -58,8 +58,7 @@ if(isset($_POST['add_to_cart'])){
 
 
 
-.
-   .
+
 <div class="w-full p-24 ">
   <div class="p-0 flex items-center text-xl overflow-hidden min-h-screen-75">
     <div class=" mx-auto px-4">
@@ -89,8 +88,8 @@ if(isset($_POST['add_to_cart'])){
  
 
 
-    <section class="products">
-
+<section >
+   <section class="products">
 <h1 class="title">latest products</h1>
 
 <div class="box-container">
@@ -103,7 +102,7 @@ if(isset($_POST['add_to_cart'])){
   <form action="" method="post" class="box">
    <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
    <div class="name"><?php echo $fetch_products['name']; ?></div>
-   <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
+   <div class="price">$<?php echo $fetch_products['price']; ?></div>
    <input type="number" min="1" name="product_quantity" value="1" class="qty">
    <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
    <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
@@ -117,7 +116,7 @@ if(isset($_POST['add_to_cart'])){
    }
    ?>
 </div>
-
+</section>
 </section>
 
      

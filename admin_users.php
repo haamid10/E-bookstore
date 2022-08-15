@@ -89,7 +89,7 @@ if(isset($_POST['search'])){
    <?php
       if(isset($_POST['submit'])){
          $search_item = $_POST['search'];
-         $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE name LIKE '%{$search_item}%'") or die('query failed');
+         $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE id LIKE '%{$search_item}%'") or die('query failed');
          if(mysqli_num_rows($select_users) > 0){
          while($fetch_users = mysqli_fetch_assoc($select_users)){
    ?>

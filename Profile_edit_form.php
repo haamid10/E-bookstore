@@ -1,69 +1,40 @@
-<?php
-include("config.php");
+<!DOCTYPE html>
 
-?>
-<form action="update_account.php" method="post">
-    name: <input type="text" name="name"><br>
-    email: <input type="text" name="email" required><br>
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-   password: <input type="password" name="password"><br>
-   user_type: <input type="password" name="user_type"><br>
-   <input type="submit" name="edit" value="edit">
-   
-</form>
+  <!-- custom css file link  -->   <link rel="stylesheet" href="css/style.css">
+    <head>
 
+        <title> PHP UPDATE DATA </title>
 
+        <meta charset="UTF-8">
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<?php
+    </head>
 
+    <body>
 
-include 'config.php';
-
-session_start();
-
-// $id = $_SESSION['id'];
+        <form id="update" class="form_container" action="update_account.php" method="post">
 
 
- if(isset($_POST['edit']))
- {
-    // $id=$_POST['id'];
-    // $name=$_POST['name'];
-    // $email=$_POST['email'];
-    // $password=$_POST['password'];
-    // $user_type=$_POST['user_type'];
-    $select= "SELECT * FROM `users` WHERE id='$id'";
-    $sql = mysqli_query($conn,$select);
-    $row = mysqli_fetch_assoc($sql);
-    $res= $row['id'];
-    // if($res === $id)
-    // {
-   
-       $update = "UPDATE `users` SET name = '$_POST[name]',email = '$_POST[email]',password = '$_POST[password]', user_type = '$_POST[user_type]' WHERE id = '$_POST[id]'";
-       $sql2 = mysqli_query($conn,$update);
-     
 
-       
-if($sql2==$row)
-       { 
-           /*Successful*/
-           header('location:home.php');
-           
-       }
-       else
-       {
-           /*sorry your profile is not update*/
-           header('location:Profile_edit_form.php');
-        echo("wax yarba khaldan");
 
-       }
-    }
-    else
-    {
-        /*sorry your id is not match*/
-        header('location:Profile_edit_form.php');
-        echo("wax waynba khaldan");
-    }
-//  }
-?>
+            New  Name:<input type="text" name="name" required><br><br>
+
+            New Email:<input type="email" name="email" required><br><br>
+
+            New pass<input type="md5" name="password"  required><br><br>
+
+            <input type="submit" name="update" value="Update Data">
+
+        </form>
+
+    </body>
+
+
+</html>
+
+
 

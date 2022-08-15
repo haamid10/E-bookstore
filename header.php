@@ -37,7 +37,30 @@ if(isset($message)){
             <?php
                $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
                $cart_rows_number = mysqli_num_rows($select_cart_number); 
+
+
             ?>
+
+
+<?php
+include 'config.php';
+session_start();
+   if(isset($_GET['update'])){
+      $update_id = $_POST['id'];
+      $update_name = $POST['update_name'];
+      $update_query = mysqli_query($conn, "SELECT * FROM `users` WHERE id = '$update_id'") or die('query failed');
+      if(mysqli_num_rows($update_query) > 0){
+         while($fetch_update = mysqli_fetch_assoc($update_query)){
+
+
+}
+}
+}else{
+echo '<script>document.querySelector(".edit-product-form").style.display = "none";</script>';
+}
+
+?>
+
             <a href="cart.php"> <i class="fas fa-shopping-cart"></i> <span>(<?php echo $cart_rows_number; ?>)</span> </a>
          </div>
 
@@ -45,6 +68,8 @@ if(isset($message)){
             <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
             <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
             <a href="logout.php" class="delete-btn">logout</a>
+            <a href="Profile_edit_form.php" name="update">UPDATE</a>
+
          </div>
       </div>
    </div>

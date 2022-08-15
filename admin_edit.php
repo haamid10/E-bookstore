@@ -44,7 +44,7 @@ if(isset($_POST['update_user']))
    
    if($result)
    {
-     header("location:home.php");
+     header("location:admin_users.php");
        echo 'Data Updated';
    }else{
        echo 'Data Not Updated';

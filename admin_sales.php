@@ -76,15 +76,18 @@ if(isset($_GET['delete'])){
                 </colgroup>
                 <thead>
                     <tr>
-                        <th>user Id</th>
-                        <th>name</th>
-                        <th>phone</th>
-                        <th>address</th>
-                        <th>email</th>
-                        <th>quantity</th>
-                        <th>price</th>
+                        <th>user Id</th>       
+                        <th>name</th>          
+                        <th>phone</th>         
+                        <th>city</th>          
+                        <th>country</th>       
+                        <th>street</th>        
+                        <th>email</th>         
+                        <th>quantity</th>       
+                        <th>price</th>           
                         <th>payment method</th>
-                        <th>placed on</th>
+                        <th>placed on</th>     
+                        <th>payment status</th>
                         
                     </tr>
                 </thead>
@@ -98,13 +101,19 @@ if(isset($_GET['delete'])){
                     <tr>  <td class="text-center"><?php echo $i++ ?></td>
                         <td> <span><?php echo $fetch_orders['user_id']; ?></td>
                         <td>
-                            <p class="m-0"><?php echo $fetch_orders['name'] ?></p>
+                            <!-- <p class="m-0"><?php echo $fetch_orders['name'] ?></p> -->
                         </td>
                         <td>
                             <p class="m-0"><?php echo $fetch_orders['number'] ?></p>
                         </td>
                         <td>
-                            <p class="m-0"><?php echo $fetch_orders['address']?></p>
+                            <p class="m-0"><?php echo $fetch_orders['city']?></p>
+                        </td>
+                        <td>
+                            <p class="m-0"><?php echo $fetch_orders['country']?></p>
+                        </td>
+                        <td>
+                            <p class="m-0"><?php echo $fetch_orders['street']?></p>
                         </td>
                         <td>
                             <p class="m-0"><?php echo $fetch_orders['email'] ?></p> </td>
@@ -112,11 +121,13 @@ if(isset($_GET['delete'])){
                        
                         <td class="text-right"><?php echo $fetch_orders['total_price'] ?></td>
                         <td class="text-center"><?php echo $fetch_orders['method']?></td>
+                        <td class="text-center"><?php echo $fetch_orders['placed_on']?></td>
+                        <td class="text-center"><?php echo $fetch_orders['payment_status']?></td>
                     </tr>
                    
                     <?php if($qry->num_rows <= 0): ?>
                     <tr>
-                        <td class="text-center" colspan="20">No Data...</td>
+                        <td class="text-center" colspan="20">___________________________________________________________________________________________</td>
                     </tr>
                     <?php endif; ?>
       
