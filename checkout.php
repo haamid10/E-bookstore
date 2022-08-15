@@ -47,6 +47,7 @@ if(isset($_POST['order_btn'])){
    }else{
       if(mysqli_num_rows($order_query) > 0){
          $message[] = 'order already placed!'; 
+         header("location:home.php");
       }else{
          mysqli_query($conn, "INSERT INTO `orders`(user_id, name, number, email, method, city,country,street, total_products, total_price, placed_on) VALUES('$user_id', '$name', '$number', '$email', '$method', '$city','$country','$street', '$total_products', '$cart_total', '$placed_on')") or die('query failed');
          $message[] = 'order placed successfully!';
