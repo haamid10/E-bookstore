@@ -47,11 +47,14 @@ include 'config.php';
 session_start();
    if(isset($_GET['update'])){
       $update_id = $_POST['id'];
-      $update_name = $POST['update_name'];
+      $update_name = $POST['name'];
+      $update_password = $POST['password'];
       $update_query = mysqli_query($conn, "SELECT * FROM `users` WHERE id = '$update_id'") or die('query failed');
       if(mysqli_num_rows($update_query) > 0){
          while($fetch_update = mysqli_fetch_assoc($update_query)){
-
+?>
+<input type="hidden" name="id" value="<?php echo $update_id=$_SESSION['id']; ?>">
+<?php
 
 }
 }
@@ -68,7 +71,7 @@ echo '<script>document.querySelector(".edit-product-form").style.display = "none
             <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
             <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
             <a href="logout.php" class="delete-btn">logout</a>
-            <a href="update_account.php" name="update">UPDATE</a>
+            <a href="Profile_edit_form.php" name="Update" value="Update">UPDATE</a>
 
          </div>
       </div>
