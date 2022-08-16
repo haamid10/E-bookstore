@@ -1,166 +1,126 @@
 <?php
 
-
 include 'config.php';
-
 session_start();
 
+if(isset($_POST['submit'])){
 
-    if(isset($_POST['adminupdate'])){
+   $id = mysqli_real_escape_string($conn, $_POST['id']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $pass = mysqli_real_escape_string($conn,($_POST['password']));
 
-     $sql = " UPDATE users SET  id= '?', email = '?', password = '?',; 
-     School = '?' WHERE idUsers = '.$sessionkk.'";
-                 $stmt = mysqli_stmt_init($conn);
-                 if(!mysqli_stmt_prepare($stmt, $sql)){
-                       header("Location: ../profile.php?error=sqlerror");
-                      exit();
-                } else{
-                    mysqli_stmt_bind_param($stmt, "ssss", $username, $email, 
-          $Schooljaar, $School);
-                    mysqli_stmt_execute($stmt);
+   $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass' WHERE id='?'") or die('query failed');
 
-                    header("Location: ../profile.php?update=succes");
-                    exit();
-                }
-              }
-     ?>
+   if(mysqli_num_rows($select_users) > 0){
+
+      $row = mysqli_fetch_assoc($select_users);
+
+      if($row['user_type'] == 'admin'){
+
+         $_SESSION['admin_name'] = $row['name'];
+         $_SESSION['admin_email'] = $row['email'];
+         $_SESSION['admin_id'] = $row['id'];
+   $select_users = mysqli_query($conn, "UPDATE * FROM `users` WHERE email = '$email' AND password = '$pass' WHERE id='?'") or die('query failed');
+         
+         header('location:admin_page.php');
+
+      }elseif($row['user_type'] == 'user'){
+
+         $_SESSION['user_name'] = $row['name'];
+         $_SESSION['user_email'] = $row['email'];
+         $_SESSION['user_id'] = $row['id'];
+         header('location:home.php');
+
+      }elseif( !md5($_POST['password'])){
+         header('location:home.php');
+      }
+      
+
+   }else{
+      $message[] = 'incorrect email or password!';
+   }
+}
+//    $email = mysqli_real_escape_string($conn, $_POST['email']);
+//    $pass = mysqli_real_escape_string($conn,md5($_POST['password']));
+//    $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+
+   '
+   
+//    '
+//    if(mysqli_num_rows($select_users) > 0){
+
+//       $row = mysqli_fetch_assoc($select_users);
+
+//       if($row['user_type'] == 'admin'){
+
+//          $_SESSION['admin_name'] = $row['name'];
+//          $_SESSION['admin_email'] = $row['email'];
+//          $_SESSION['admin_id'] = $row['id'];
+//    $select_us = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass' ") or die('query failed');
+
+//          header('location:admin_page.php');
+
+//       }elseif($row['user_type'] == 'user'){
+
+//          $_SESSION['user_name'] = $row['name'];
+//          $_SESSION['user_email'] = $row['email'];
+//          $_SESSION['user_id'] = $row['id'];
+//          header('location:home.php');
+
+//       }elseif( !md5($_POST['password'])){
+//          header('location:home.php');
+//       }
+      
+
+//    }else{
+//       $message[] = 'incorrect email or password!';
+//    }
 
 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../style.css" /> -->
-  
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>login</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
- <!-- Sidebar -->
- <!-- <div id="mySidenav" class="sidenav">
-      <p class="logo"><span>Al</span>-Ridwaan</p>
-      <a href="../application/root.html" class="icon-a"
-        ><i class="fa fa-dashboard icons"></i> Dashboard</a
-      >
-      <a href="../application/pages/customers.php" class="icon-a"
-        ><i class="fa fa-users icons"></i>Customer Registration</a
-      >
-      <a href="../application/pages/documents.html" class="icon-a"
-        ><i class="fa fa-list icons"></i>Document Saving</a
-      >
-      <a href="../application/pages/agreements.html" class="icon-a"
-        ><i class="fa fa-tasks icons"></i>Agreements</a
-      >
-      <a href="../application/pages/finance.html" class="icon-a"
-        ><i class="fa fa-user icons"></i>Finance</a
-      >
-      <a href="../application/pages/report.html" class="icon-a"
-        ><i class="fa fa-list-alt icons"></i>Reports</a
-      >
-    </div>
- -->
-        <!-- Main -->
-    <!-- <div id="main">
-      <div class="col-div-6">
-        <span style="font-size: 30px; cursor: pointer; color: white" class="nav"
-          >☰Register Form</span
-        >
-        <span
-          style="font-size: 30px; cursor: pointer; color: white"
-          class="nav2"
-          >☰Register Form</span
-        >
+
+<?php
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
       </div>
-
-      <div class="col-div-6">
-        <div class="profile">
-          <img src="/Hakiim.jpg" class="pro-img" />
-          <p>Abdihakim Osman<span> Admin</span></p>
-        </div>
-      </div> -->
-
-      <!-- <div class="col-div-8">
-        <form
-          action="Profile_edit_form.php"
-          method="POST"
-          class="form-controller"
-        > -->
+      ';
+   }
+}
+?>
 
 
-        <!-- <?php
 
-include 'config.php';
+<div class="form-container">
 
-session_start();
+   <form action="" method="post">
+      <h3>login now</h3>
+      <input type="hidden" name="id" placeholder="ent" readonly class="box">
+      <input type="email" name="email" placeholder="enter your email" required class="box">
+      <input type="password" name="password" placeholder="enter your password" required class="box">
+      <input type="submit" name="submit" value="update" class="btn">
+      <!-- <p>don't have an account? <a href="register.php">register now</a></p> -->
+   </form>
 
-// $id = $_SESSION['id'];
-
-// if(!isset($id)){
- 
-//          if($conn){
-//          if(isset($_GET['Update'])){
-//            $id = $_GET['id'];
-//            $name = $_POST['name'];
-//            $email = $_POST['email'];
-//            $password = $_POST['password'];
-//            $result = 0;
-
-//            $query = "SELECT * FROM users WHERE id = $id";
-//            $query2 = "UPDATE customer SET name ='$name', email ='$email' , password = '$password',  WHERE id = $id";
-//            $result2 =  mysqli_query($conn , $query2);
-//             if(!$result2)
-//             echo "NO UPDATED"; 
-//             else
-//               header("location:home.php");
-//            $message[] = ' updated!';
-
-             
-//            $result = mysqli_query($conn , $query);
-
-//            if(mysqli_num_rows($result) > 0){
-//              while($rows =  mysqli_fetch_assoc($result)){
-//               $id=  $rows['id'];
-//               $name = $rows['name'];
-//               $email=  $rows['email'];
-//               $password = $rows['password'];
-            //  }
-//            }
-
-//         }          
-           
-//      else 
-//       echo "DATA NO SETTED";
-//  }
-//  else
-//    die("NO CONNECTION");  
-         
-// }
-        
-        
-        // ?>
-       
-            <input type="text" readonly name="id" placeholder="Customer ID....." value="<?php echo $id ?>" />
-         
-        
-            <input type="text" name="name" placeholder="Customer Name....." value="<?php echo $name ?>" />
-         
-        
-            <input
-              type="text" name="email" placeholder="Customer Address....." value="<?php echo $email ?>"
-            />
-         
-        
-            <input type="password" name="password" placeholder="Customer Phone....." value="<?php echo $password ?>" />
-         
-     
-            <!-- <input type="date" name="r_date" placeholder="Register Date....." value="<?php echo $date ?>"   /> -->
-         
-<!--         
-            <button type="submit" name="send" class="save-btn">Submit</button>
-         
-        </form>
-      </div>
-    </div>
-</body>
-</html> --> -->
+</div
