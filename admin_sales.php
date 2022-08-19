@@ -251,7 +251,15 @@ if(isset($_POST['search'])){
       }
       
       ?>
-               <a href="sales_print.php" >print111</a>            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a href="sales_print.php" >print111</a>            
          <script type="text/javascript">
 
        function myFun(){
@@ -259,6 +267,11 @@ if(isset($_POST['search'])){
        }
             </script>
             </table>
+
+
+
+
+            
            
        
    

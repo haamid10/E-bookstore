@@ -14,7 +14,7 @@ include 'config.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buses</title>
+    <title>sales</title>
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
@@ -56,7 +56,7 @@ include 'config.php';
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Summury Report about Route</h2>
+                <h2>Summury Report </h2>
                 <table class="table table-bordered   " >
                     <thead>
                         <tr>
@@ -86,12 +86,15 @@ include 'config.php';
                                 <td><?php echo $fetch_orders['user_id'];  ?></td>
                                 <td><?php echo $fetch_orders['name'];  ?></td>
                                 <td><?php echo $fetch_orders['number'];  ?></td>
-                                <td><?php echo $user_data['total_products'];  ?></td>
-                                <td><?php echo $fetch_orders['total_price'];  ?></td>
-                                <td><?php echo $fetch_orders['email'];  ?></td>
                                 <td><?php echo $fetch_orders['city'];  ?></td>
                                 <td><?php echo $fetch_orders['country'];  ?></td>
                                 <td><?php echo $fetch_orders['street'];  ?></td>
+                                <td><?php echo $fetch_orders['email'];  ?></td>
+                                <td><?php echo $fetch_orders['total_products'];  ?></td>
+                                <td><?php echo $fetch_orders['total_price'];  ?></td>
+                                
+                                
+                                
                                 <td><?php echo $fetch_orders['payment_status'];  ?></td>
                                 <td><?php echo $fetch_orders['placed_on'];  ?></td>
                                 <td><?php echo $fetch_orders['method'];  ?></td>
@@ -129,4 +132,3 @@ include 'config.php';
 </body>
 
 </html>
-Footer
