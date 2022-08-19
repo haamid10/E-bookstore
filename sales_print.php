@@ -60,33 +60,42 @@ include 'config.php';
                 <table class="table table-bordered   " >
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>route Id</th>
-                            <th>route_cities</th>
-                            <th>route_dep_date</th>
-                            <th>route_dep_time</th>
-                            <th>route_step_cost</th>
-                            <th>route_step_cost</th>
-                            <th>route_created</th>
+                        <th>user Id</th>       
+                        <th>name</th>          
+                        <th>phone</th>         
+                        <th>city</th>          
+                        <th>country</th>       
+                        <th>street</th>        
+                        <th>email</th>         
+                        <th>quantity</th>       
+                        <th>price</th>           
+                        <th>payment method</th>
+                        <th>placed on</th>     
+                        <th>payment status</th>
                         </tr>
                     </thead>
                     <tbody>
                       
                         <?php
                         // $sn = 1;
-                        $user_qry = "SELECT * FROM `orders`";
-                        $user_res = mysqli_query($con, $user_qry);
-                        if(mysqli_num_rows($user_res) > 0){
-                        while ($user_data = mysqli_fetch_assoc($user_res)) { ?>
+                        $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
+                        if(mysqli_num_rows($select_orders) > 0){
+                           while($fetch_orders = mysqli_fetch_assoc($select_orders)){
+                       ?>
                             <tr>
-                                <td><?php echo $user_data['user_id'];  ?></td>
-                                <td><?php echo $user_data['name'];  ?></td>
-                                <td><?php echo $user_data['number'];  ?></td>
-                                <td><?php echo $user_data['city'];  ?></td>
-                                <td><?php echo $user_data['country'];  ?></td>
-                                <td><?php echo $user_data['street'];  ?></td>
-                                <td><?php echo $user_data['route_step_cost'];  ?></td>
-                                <td><?php echo $user_data['route_created'];  ?></td>
+                                <td><?php echo $fetch_orders['user_id'];  ?></td>
+                                <td><?php echo $fetch_orders['name'];  ?></td>
+                                <td><?php echo $fetch_orders['number'];  ?></td>
+                                <td><?php echo $user_data['total_products'];  ?></td>
+                                <td><?php echo $fetch_orders['total_price'];  ?></td>
+                                <td><?php echo $fetch_orders['email'];  ?></td>
+                                <td><?php echo $fetch_orders['city'];  ?></td>
+                                <td><?php echo $fetch_orders['country'];  ?></td>
+                                <td><?php echo $fetch_orders['street'];  ?></td>
+                                <td><?php echo $fetch_orders['payment_status'];  ?></td>
+                                <td><?php echo $fetch_orders['placed_on'];  ?></td>
+                                <td><?php echo $fetch_orders['method'];  ?></td>
+                               
                             </tr>
                         <?php
                             $sn++;
