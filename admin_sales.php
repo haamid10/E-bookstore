@@ -233,7 +233,7 @@ if(isset($_POST['search'])){
                         <td class="text-center"><?php echo $fetch_orders['method']?></td>
                         <td class="text-center"><?php echo $fetch_orders['placed_on']?></td>
                         <td class="text-center"><?php echo $fetch_orders['payment_status']?></td>
-                        <td>   <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('delete this order?');" class="delete-btn">delete</a> </td>
+                        <td>   <a href="admin_sales.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('delete this order?');" class="delete-btn">delete</a> </td>
                     </tr>
                    
                     <?php if($qry->num_rows <= 0): ?>
@@ -251,7 +251,7 @@ if(isset($_POST['search'])){
       }
       
       ?>
-               <button onclick="myFun()">print111</button>            
+               <a href="sales_print.php" >print111</a>            
          <script type="text/javascript">
 
        function myFun(){

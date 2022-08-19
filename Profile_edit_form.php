@@ -33,6 +33,7 @@ if(isset($_POST['submit'])){
 
       }elseif( !md5($_POST['password'])){
          header('location:home.php');
+         
       }
       
 
