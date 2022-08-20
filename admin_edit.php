@@ -16,19 +16,13 @@ session_start();
 
 // if(isset($_GET['submit'])){
 
-if(isset($_POST['update_user']))
+if(isset($_POST['id']))
 {
-    
-   $hostname = "localhost";
-   $username = "root";
-   $pass= "";
-   $databaseName = "shop_db";
-   
-   $connect = mysqli_connect($hostname, $username, $pass, $databaseName);
+   include 'config.php';
    
    // get values form input text and number
    
-   $id = $_POST['id'];
+   $id = $_GET['id'];
    $name = $_POST['name'];
    $email = $_POST['email'];
    $password = md5($_POST['password']);
@@ -40,7 +34,7 @@ if(isset($_POST['update_user']))
    $password = $_POST['password'];
    $query = "UPDATE `users` SET `name`='".$name."',`email`='".$email."',`password`= '".$password."', `user_type`= '".$user_type."' WHERE `id` = $id";
    
-   $result = mysqli_query($connect, $query);
+   $result = mysqli_query($conn, $query);
    
    if($result)
    {
@@ -79,7 +73,7 @@ if(isset($_POST['update_user']))
 
 <form action="" method="post">
       <h3>UPDATE NOW</h3>
-      <input type="number" name="id" placeholder="enter your id" required class="box"></br>
+      <input type="hidden" name="id" placeholder="enter your id" required class="box"></br>
       <input type="text" name="name" placeholder="enter your name" required class="box"></br>
       <input type="email" name="email" placeholder="enter your email" required class="box"></br>
       <input type="password" name="password" placeholder="enter your password" required class="box"></br>

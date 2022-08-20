@@ -93,7 +93,7 @@ if(isset($_POST['search'])){
          if(mysqli_num_rows($select_users) > 0){
          while($fetch_users = mysqli_fetch_assoc($select_users)){
    ?>
-   <form action="" method="post" class="box">
+   <form action="" method="get" class="box">
      
       <input type="number"  class="qty" name="product_quantity" min="1" value="1">
       <input type="hidden" name="name" value="<?php echo $fetch_users['name']; ?>">
@@ -103,8 +103,10 @@ if(isset($_POST['search'])){
          <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
          <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
          <p> user type : <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
+         <td>
          <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete user</a>
-         <a type="submit" value="update"  class="option-btn" href="admin_edit.php">click here </a>
+         <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
+         </td>
    </form>
    <?php
             }
@@ -138,7 +140,7 @@ if(isset($_POST['search'])){
          <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
          <p> user type : <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
          <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete user</a>
-         <a type="submit" value="update"  class="option-btn" href="admin_edit.php">click here </a>
+         <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
       </div>
       <?php
          };
