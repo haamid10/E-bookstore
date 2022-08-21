@@ -46,6 +46,8 @@ if(isset($message)){
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin_style.css">
+
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.3.1
@@ -78,9 +80,8 @@ if(isset($message)){
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
-
-
-      <div class="icons">
+     <div class=" nav-item dropdown pe-3">
+     <div class="nav-link nav-profile d-flex align-items-center pe-0">
          <div id="menu-btn" class="fas fa-bars"></div>
          <div id="user-btn" class="fas fa-user"></div>
       </div>
@@ -89,15 +90,15 @@ if(isset($message)){
          while($fetch_users = mysqli_fetch_assoc($select_users)){
       ?>
 
-      <div class="d-flex align-items-center">
+      <div class="account-box">
          <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
          <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
          <a href="logout.php" class="delete-btn">logout</a> 
          <div>new <a href="login.php">login</a> | <a href="register.php">register</a><?php }?></div>
       </div>
 
-   </div>
-      
+     </div>
+
     </nav>
 
   </header><!-- End Header -->
