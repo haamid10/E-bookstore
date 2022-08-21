@@ -104,16 +104,62 @@ if(isset($message)){
 
    </div>
 
-</header><?php
-if(isset($message)){
-   foreach($message as $message){
-      echo '
-      <div class="message">
-         <span>'.$message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-      </div>
-      ';
-   }
-}
-?>
+</header>
+
+
+<aside id="sidebar" class="sidebar">
+
+<ul class="sidebar-nav" id="sidebar-nav">
+
+  <li class="nav-item">
+    <a class="nav-link " href="admin_page.php">
+      <i class="bi bi-grid"></i>
+      <span>Dashboard</span>
+    </a>
+  </li><!-- End Dashboard Nav -->
+
+  
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="admin_products.php">
+      <i class="bi bi-bar-chart"></i>
+      <span>Products</span>
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="admin_users.php">
+      <i class="bi bi-gem"></i>
+      <span>Users</span>
+    </a>
+  </li>
+
+  
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="admin_orders.php">
+      <i class="bi bi-person"></i>
+      <span>orders</span>
+    </a>
+  </li>
+
+  
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="admin_contacts.php">
+      <i class="bi bi-envelope"></i>
+      <span>Messeges</span>
+    </a>
+  </li>
+
+  
+  <li class="nav-item">
+    <a class="nav-link " href="admin_page.php">
+      <i class="bi bi-layout-text-window-reverse"></i>
+      <span>sales report</span>
+    </a>
+  </li>
+
+
+ 
+</ul>
+
+</aside><!-- End Sidebar-->
 
