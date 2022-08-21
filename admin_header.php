@@ -75,16 +75,7 @@ if(isset($message)){
 
       
 
-      <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
-
-        <a class="nav-link nav-icon search-bar-toggle " href="admin_sales.php">sales</a>
-         <a class="nav-link nav-icon search-bar-toggle " href="admin_page.php">home</a>
-         <a class="nav-link nav-icon search-bar-toggle " href="admin_products.php">products</a>
-         <a class="nav-link nav-icon search-bar-toggle " href="admin_orders.php">orders</a>
-         <a class="nav-link nav-icon search-bar-toggle " href="admin_users.php">users</a>
-         <a class="nav-link nav-icon search-bar-toggle " href="admin_contacts.php">messages</a>
-      </nav>
+   
 
       <div class="nav-item dropdown ">
          <div  id="menu-btn" class="fas fa-bars"></div>

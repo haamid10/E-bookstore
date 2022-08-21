@@ -31,8 +31,7 @@ if(!isset($admin_id)){
    
 <?php include 'admin_header.php'; ?>
 
-
-
+<main class="main" id="main">
 <!-- admin dashboard section starts  -->
 
 <section class="dashboard">
@@ -145,7 +144,7 @@ if(!isset($admin_id)){
 
 
 
-
+</main>
 
 
 <!-- custom admin js file link  -->
