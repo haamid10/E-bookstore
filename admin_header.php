@@ -59,68 +59,36 @@ if(isset($message)){
 
 <body>
 
-  <!-- ======= Header ======= -->
+
   <header id="header" class="header fixed-top d-flex align-items-center">
 
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <span class="d-none d-lg-block">Iqra Books</span>
+  <div class="d-flex align-items-center justify-content-between">
+      <a href="admin_page.php" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">Iqra books</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
-    <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-      </form>
-    </div><!-- End Search Bar -->
-
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
-
-     <div class=" nav-item dropdown pe-3">
-     <div class="nav-link nav-profile d-flex align-items-center pe-0">
-         <div id="menu-btn" class="fas fa-bars"></div>
-         <div id="user-btn" class="fas fa-user"></div>
-      </div>
-      <?php
-         $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
-         while($fetch_users = mysqli_fetch_assoc($select_users)){
-      ?>
-
-      <div class="account-box">
-         <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
-         <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
-         <a href="logout.php" class="delete-btn">logout</a> 
-         <div>new <a href="login.php">login</a> | <a href="register.php">register</a><?php }?></div>
-      </div>
-
-     </div>
-
-    </nav>
-
-  </header><!-- End Header -->
-
-<header class="header">
+   
 
    <div class="flex">
 
-      <a href="admin_users.php" class="logo">Admin<span>Panel</span></a>
+      
 
-      <nav class="navbar">
-        <a href="admin_sales.php">sales</a>
-         <a href="admin_page.php">home</a>
-         <a href="admin_products.php">products</a>
-         <a href="admin_orders.php">orders</a>
-         <a href="admin_users.php">users</a>
-         <a href="admin_contacts.php">messages</a>
+      <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <a class="nav-link nav-icon search-bar-toggle " href="admin_sales.php">sales</a>
+         <a class="nav-link nav-icon search-bar-toggle " href="admin_page.php">home</a>
+         <a class="nav-link nav-icon search-bar-toggle " href="admin_products.php">products</a>
+         <a class="nav-link nav-icon search-bar-toggle " href="admin_orders.php">orders</a>
+         <a class="nav-link nav-icon search-bar-toggle " href="admin_users.php">users</a>
+         <a class="nav-link nav-icon search-bar-toggle " href="admin_contacts.php">messages</a>
       </nav>
 
-      <div class="icons">
-         <div id="menu-btn" class="fas fa-bars"></div>
-         <div id="user-btn" class="fas fa-user"></div>
+      <div class="nav-item dropdown ">
+         <div  id="menu-btn" class="fas fa-bars"></div>
+         <div id="user-btn" class="fas fa-user"> Admin</div>
       </div>
       <?php
          $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
