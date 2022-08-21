@@ -32,11 +32,21 @@ if(!isset($admin_id)){
 <?php include 'admin_header.php'; ?>
 
 <main class="main" id="main">
+
+<div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="admin_page.php">Home   </a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
 <!-- admin dashboard section starts  -->
 
-<section class="dashboard">
+<section class="section dashboard">
 
-   <h1 class="title">dashboard</h1>
 
    <div class="box-container">
 
