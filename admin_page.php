@@ -67,7 +67,7 @@ if(!isset($admin_id)){
           <div class="row">
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6">
+     <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
                 
             
@@ -99,12 +99,12 @@ if(!isset($admin_id)){
 
              
        
-      </div>
-                  </div>
-                </div>
-              </div>
           </div>
         </div>
+      </div>
+   </div>
+   <!-- ends of sales card -->
+        
 
       <div class="box">
          <?php
@@ -121,7 +121,10 @@ if(!isset($admin_id)){
          <p>completed payments</p>
       </div>
 
-      <div class="box">
+      
+            <!-- Revenue Card -->
+     <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
          <?php 
             $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
             $number_of_orders = mysqli_num_rows($select_orders);
@@ -129,7 +132,29 @@ if(!isset($admin_id)){
          <h3><?php echo $number_of_orders; ?></h3>
          <p>order placed</p>
       </div>
+      <div class="card-body">
+                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
 
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$3,264</h6>
+                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Revenue Card -->
+
+     
+     
+     
+     
+     
       <div class="box">
          <?php 
             $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
