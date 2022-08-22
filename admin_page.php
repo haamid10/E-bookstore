@@ -56,7 +56,8 @@ if(!isset($admin_id)){
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
       </nav>
-    </div><!-- End Page Title -->
+    </div>
+    <!-- End Page Title -->
 
 <!-- admin dashboard section starts  -->
 
@@ -120,9 +121,8 @@ if(!isset($admin_id)){
          <h3>$<?php echo $total_completed; ?>/-</h3>
          <p>completed payments</p>
       </div>
-
-      
-            <!-- Revenue Card -->
+        <!-- Revenue Card -->
+        .
      <div class="col-xxl-4 col-md-6">
               <div class="card info-card revenue-card">
          <?php 
