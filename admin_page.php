@@ -46,11 +46,27 @@ if(!isset($admin_id)){
 <!-- admin dashboard section starts  -->
 
 <section class="section dashboard">
+<div class="row">
+
+        <div class="col-lg-8">
+          <div class="row">
+
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
+                
+            
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Pending</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cart"></i>
+                    </div>
 
 
-   <div class="box-container">
 
-      <div class="box">
          <?php
             $total_pendings = 0;
             $select_pending = mysqli_query($conn, "SELECT total_price FROM `orders` WHERE payment_status = 'pending'") or die('query failed');
@@ -61,9 +77,14 @@ if(!isset($admin_id)){
                };
             };
          ?>
-         <h3>$<?php echo $total_pendings; ?>/-</h3>
-         <p>total pendings</p>
+         
+         <h3 class="ps-3" >$<?php echo $total_pendings; ?>/-</h3>
+         <p class="text-success small pt-1 fw-bold">total pendings</p>
+      
       </div>
+                  </div>
+                </div>
+              </div>
 
       <div class="box">
          <?php
