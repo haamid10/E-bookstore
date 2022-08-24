@@ -139,7 +139,7 @@ if(!isset($admin_id)){
         <!-- Revenue Card -->
         
 
-     <div class="col-xxl-4 col-md-6">
+   <div class="col-xxl-4 col-md-6">
               <div class="card info-card revenue-card">
 
          <?php 
@@ -151,7 +151,7 @@ if(!isset($admin_id)){
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bi-user"></i>
+                      <i class="bi bi-person"></i>
                     </div>
                     <div class="ps-3">
                       <h6><?php echo $number_of_orders; ?></h6>
@@ -162,10 +162,10 @@ if(!isset($admin_id)){
                 </div>
 
               </div>
-         <h3><?php echo $number_of_orders; ?></h3>
-         <p>order placed</p>
-      </div>
-          </div>  
+   </div>    
+          
+              <!-- orders card -->
+       
 
      
      
