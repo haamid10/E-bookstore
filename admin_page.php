@@ -183,7 +183,7 @@ if(!isset($admin_id)){
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-person"></i>
+                      <i class="bi bi-bar-chart"></i>
                     </div>
                     <div class="ps-3">
                       <h6><?php echo $number_of_products; ?></h6>
@@ -192,12 +192,15 @@ if(!isset($admin_id)){
                     </div>
                   </div>
                 </div>
-         <h3><?php echo $number_of_products; ?></h3>
-         <p>products added</p>
+        
       </div>
+   </div>
 
-      <div class="box">
-         <?php 
+
+        
+    <div class="col-xxl-4 col-md-6">
+      <div class="card info-card revenue-card">
+<?php 
             $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'user'") or die('query failed');
             $number_of_users = mysqli_num_rows($select_users);
          ?>
