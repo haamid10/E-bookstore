@@ -268,7 +268,9 @@ if(!isset($admin_id)){
 
                     </div>
                   </div>
-                </div>      </div>
+                </div>      
+               </div>
+               <!-- users card -->
 
       <div class="col-xxl-4 col-md-6">
       <div class="card info-card revenue-card">
@@ -280,14 +282,14 @@ if(!isset($admin_id)){
          <p>new messages</p>
 
 <div class="card-body">
-                  <h5 class="card-title">Normal Users</h5>
+                  <h5 class="card-title">Messeges </h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class="bi bi-bar-chart"></i>
                     </div>
                     <div class="ps-3">
-                      <h6><?php echo $number_of_users; ?></h6>
+                      <h6><?php echo $number_of_messages; ?></h6>
                      
 
                     </div>
