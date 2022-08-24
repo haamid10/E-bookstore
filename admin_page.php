@@ -68,7 +68,7 @@ if(!isset($admin_id)){
           <div class="row">
 
             <!-- Sales Card -->
-     <div class="col-xxl-4 col-md-6">
+     <div class="col-xxl-4 col-md-4">
               <div class="card info-card sales-card">
                 
             
@@ -107,7 +107,7 @@ if(!isset($admin_id)){
    <!-- ends of sales card -->
         
 
-   <div class="col-xxl-4 col-md-6">
+   <div class="col-xxl-4 col-md-4">
               <div class="card info-card revenue-card">
          <?php
             $total_completed = 0;
@@ -139,7 +139,7 @@ if(!isset($admin_id)){
         <!-- Revenue Card -->
         
 
-   <div class="col-xxl-4 col-md-6">
+   <div class="col-xxl-4 col-md-4">
               <div class="card info-card revenue-card">
 
          <?php 
@@ -172,7 +172,7 @@ if(!isset($admin_id)){
      
      
      
-    <div class="col-xxl-4 col-md-6">
+    <div class="col-xxl-4 col-md-4">
       <div class="card info-card revenue-card">
          <?php 
             $select_products = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
@@ -198,7 +198,7 @@ if(!isset($admin_id)){
 
 
         
-    <div class="col-xxl-4 col-md-6">
+    <div class="col-xxl-4 col-md-4">
       <div class="card info-card revenue-card">
 <?php 
             $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'user'") or die('query failed');
@@ -222,7 +222,7 @@ if(!isset($admin_id)){
       </div>
 
 
-      <div class="col-xxl-4 col-md-6">
+      <div class="col-xxl-4 col-md-4">
       <div class="card info-card revenue-card">
          <?php 
             $select_admins = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'admin'") or die('query failed');
@@ -231,7 +231,7 @@ if(!isset($admin_id)){
          
 
      <div class="card-body">
-                  <h5 class="card-title">Normal admins</h5>
+                  <h5 class="card-title">Admin users</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -247,7 +247,7 @@ if(!isset($admin_id)){
                 </div>
  </div>             
 
-      <div class="col-xxl-4 col-md-6">
+      <div class="col-xxl-4 col-md-4">
       <div class="card info-card revenue-card">
          <?php 
             $select_account = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
@@ -272,16 +272,15 @@ if(!isset($admin_id)){
                </div>
                <!-- users card -->
 
-      <div class="col-xxl-4 col-md-6">
+       <div class="col-xxl-2 col-md-9">
       <div class="card info-card revenue-card">
          <?php 
             $select_messages = mysqli_query($conn, "SELECT * FROM `message`") or die('query failed');
             $number_of_messages = mysqli_num_rows($select_messages);
          ?>
-         <h3><?php echo $number_of_messages; ?></h3>
-         <p>new messages</p>
+        
 
-<div class="card-body">
+      <div class="card-body">
                   <h5 class="card-title">Messeges </h5>
 
                   <div class="d-flex align-items-center">
@@ -294,9 +293,12 @@ if(!isset($admin_id)){
 
                     </div>
                   </div>
-                </div>      </div>
+                </div>     
+                </div>
+      </div>    
+            <!-- messeges  -->
 
-      <div class="col-xxl-4 col-md-6">
+      <div class="col-xxl-4 col-md-4">
       <div class="card info-card revenue-card">
          <?php 
             $select_sales = mysqli_query($conn, "SELECT * FROM `sales`") or die('query failed');
