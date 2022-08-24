@@ -204,8 +204,21 @@ if(!isset($admin_id)){
             $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'user'") or die('query failed');
             $number_of_users = mysqli_num_rows($select_users);
          ?>
-         <h3><?php echo $number_of_users; ?></h3>
-         <p>normal users</p>
+          <div class="card-body">
+                  <h5 class="card-title">Normal Users</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-bar-chart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><?php echo $number_of_users; ?></h6>
+                     
+
+                    </div>
+                  </div>
+                </div>
+      </div>
       </div>
 
       <div class="box">
