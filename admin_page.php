@@ -107,7 +107,8 @@ if(!isset($admin_id)){
    <!-- ends of sales card -->
         
 
-      <div class="box">
+   <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
          <?php
             $total_completed = 0;
             $select_completed = mysqli_query($conn, "SELECT total_price FROM `orders` WHERE payment_status = 'completed'") or die('query failed');
@@ -118,13 +119,30 @@ if(!isset($admin_id)){
                };
             };
          ?>
-         <h3>$<?php echo $total_completed; ?>/-</h3>
+          <div class="card-body">
+                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$<?php echo $total_completed; ?></h6>
+                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                    </div>
+                  </div>
+                </div>
+         <h3>$<?php echo $total_completed; ?></h3>
          <p>completed payments</p>
       </div>
+   </div>
         <!-- Revenue Card -->
-        .
+        
+
      <div class="col-xxl-4 col-md-6">
               <div class="card info-card revenue-card">
+
          <?php 
             $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
             $number_of_orders = mysqli_num_rows($select_orders);
@@ -132,7 +150,7 @@ if(!isset($admin_id)){
          <h3><?php echo $number_of_orders; ?></h3>
          <p>order placed</p>
       </div>
-      <div class="card-body">
+      <!-- <div class="card-body">
                   <h5 class="card-title">Revenue <span>| This Month</span></h5>
 
                   <div class="d-flex align-items-center">
@@ -148,7 +166,7 @@ if(!isset($admin_id)){
                 </div>
 
               </div>
-            </div><!-- End Revenue Card -->
+      </div>End Revenue Card -->
 
      
      
