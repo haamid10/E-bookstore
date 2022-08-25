@@ -63,15 +63,26 @@ echo '<script>document.querySelector(".edit-product-form").style.display = "none
 }
 
 ?>
+   
+
 
             <a href="cart.php"> <i class="fas fa-shopping-cart"></i> <span>(<?php echo $cart_rows_number; ?>)</span> </a>
          </div>
+         
+         <?php
+         $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
+         while($fetch_users = mysqli_fetch_assoc($select_users)){
+      ?>
 
          <div class="user-box">
-            <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
-            <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
+         <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
+         <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
             <a href="logout.php" class="delete-btn">logout</a>
-            <a href="Profile_edit_form.php" name="Update" value="Update">UPDATE</a>
+            <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
+
+            <?php
+         }
+            ?>
 
          </div>
       </div>
