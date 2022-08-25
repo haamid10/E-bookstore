@@ -120,7 +120,7 @@ if(!isset($admin_id)){
             };
          ?>
           <div class="card-body">
-                  <h5 class="card-title"> completed payments </h5>
+                  <h5 class="card-title"> completed sales </h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -128,7 +128,7 @@ if(!isset($admin_id)){
                     </div>
                     <div class="ps-3">
                       <h6>$<?php echo $total_completed; ?></h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                     
 
                     </div>
                   </div>
@@ -268,7 +268,8 @@ if(!isset($admin_id)){
 
                     </div>
                   </div>
-                </div>      
+                </div> 
+      </div>     
                </div>
                <!-- users card -->
 
@@ -295,6 +296,7 @@ if(!isset($admin_id)){
                   </div>
                 </div>     
                 </div>
+       </div>
       </div>    
             <!-- messeges  -->
 
