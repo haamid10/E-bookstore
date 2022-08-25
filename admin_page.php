@@ -298,32 +298,6 @@ if(!isset($admin_id)){
       </div>    
             <!-- messeges  -->
 
-      <div class="col-xxl-4 col-md-4">
-      <div class="card info-card revenue-card">
-         <?php 
-            $select_sales = mysqli_query($conn, "SELECT * FROM `sales`") or die('query failed');
-            $number_of_sales = mysqli_num_rows($select_sales);
-         ?>
-         <h3><?php echo $number_of_messages; ?></h3>
-         <p>new sales</p>
-
-<div class="card-body">
-                  <h5 class="card-title">Normal Users</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bar-chart"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6><?php echo $number_of_users; ?></h6>
-                     
-
-                    </div>
-                  </div>
-                </div>      </div>
-
-   </div>
-
 </section>
 
 <!-- admin dashboard section ends -->
