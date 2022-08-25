@@ -243,7 +243,8 @@ if(!isset($admin_id)){
 
                     </div>
                   </div>
-                </div>     
+                </div>  
+                </div>   </div>     
                 </div>
  </div>             
 
@@ -269,11 +270,16 @@ if(!isset($admin_id)){
                     </div>
                   </div>
                 </div> 
-      </div>     
+                <div class="col-xxl-4 col-md-4">
+    
+       </div>
+      </div> 
+      </div>   </div>  
+          
                </div>
                <!-- users card -->
 
-       <div class="col-xxl-2 col-md-9">
+       <div class="col-xxl-4 col-md-4">
       <div class="card info-card revenue-card">
          <?php 
             $select_messages = mysqli_query($conn, "SELECT * FROM `message`") or die('query failed');
@@ -294,7 +300,8 @@ if(!isset($admin_id)){
 
                     </div>
                   </div>
-                </div>     
+                </div>  
+      </div>   
                 </div>
        </div>
       </div>    
