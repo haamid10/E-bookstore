@@ -68,7 +68,7 @@ echo '<script>document.querySelector(".edit-product-form").style.display = "none
 
             <a href="cart.php"> <i class="fas fa-shopping-cart"></i> <span>(<?php echo $cart_rows_number; ?>)</span> </a>
          </div>
-         
+         https://www.youtube.com/watch?v=9Qk2GlkkvH8
          <?php
          $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
          while($fetch_users = mysqli_fetch_assoc($select_users)){
