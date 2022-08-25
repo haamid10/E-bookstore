@@ -65,18 +65,11 @@ if(!isset($admin_id)){
 <div class="row">
 
         <div class="col-lg-8">
-          <div class="row">
+          <div  class="row">
 
             <!-- Sales Card -->
      <div class="col-xxl-4 col-md-4">
               <div class="card info-card sales-card">
-                
-            
-
-                
-
-
-
          <?php
             $total_pendings = 0;
             $select_pending = mysqli_query($conn, "SELECT total_price FROM `orders` WHERE payment_status = 'pending'") or die('query failed');
@@ -165,12 +158,6 @@ if(!isset($admin_id)){
    </div>    
           
               <!-- orders card -->
-       
-
-     
-     
-     
-     
      
     <div class="col-xxl-4 col-md-4">
       <div class="card info-card revenue-card">
@@ -195,91 +182,8 @@ if(!isset($admin_id)){
         
       </div>
    </div>
-
-
-        
-    <div class="col-xxl-4 col-md-4">
-      <div class="card info-card revenue-card">
-<?php 
-            $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'user'") or die('query failed');
-            $number_of_users = mysqli_num_rows($select_users);
-         ?>
-          <div class="card-body">
-                  <h5 class="card-title">Normal Users</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bar-chart"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6><?php echo $number_of_users; ?></h6>
-                     
-
-                    </div>
-                  </div>
-                </div>
-      </div>
-      </div>
-
-
-      <div class="col-xxl-4 col-md-4">
-      <div class="card info-card revenue-card">
-         <?php 
-            $select_admins = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'admin'") or die('query failed');
-            $number_of_admins = mysqli_num_rows($select_admins);
-         ?>
-         
-
-     <div class="card-body">
-                  <h5 class="card-title">Admin users</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bar-chart"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6><?php echo $number_of_admins; ?></h6>
-                     
-
-                    </div>
-                  </div>
-                </div>  
-                </div>   </div>     
-                </div>
- </div>             
-
-      <div class="col-xxl-4 col-md-4">
-      <div class="card info-card revenue-card">
-         <?php 
-            $select_account = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
-            $number_of_account = mysqli_num_rows($select_account);
-         ?>
-      
-
-<div class="card-body">
-                  <h5 class="card-title">Total Users</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bar-chart"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6><?php echo $number_of_account; ?></h6>
-                     
-
-                    </div>
-                  </div>
-                </div> 
-                <div class="col-xxl-4 col-md-4">
-    
-       </div>
-      </div> 
-      </div>   </div>  
-          
-               </div>
-               <!-- users card -->
-
-       <div class="col-xxl-4 col-md-4">
+   <!-- products -->
+   <div class="col-xxl-4 col-md-4">
       <div class="card info-card revenue-card">
          <?php 
             $select_messages = mysqli_query($conn, "SELECT * FROM `message`") or die('query failed');
@@ -302,9 +206,106 @@ if(!isset($admin_id)){
                   </div>
                 </div>  
       </div>   
+</div>
+
+<!-- messeges -->
+
+
+        
+  <div class="col-xxl-4 col-md-4">
+      <div class="card info-card revenue-card">
+          <?php 
+            $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'user'") or die('query failed');
+            $number_of_users = mysqli_num_rows($select_users);
+         ?>
+          <div class="card-body">
+                  <h5 class="card-title">Normal Users</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-bar-chart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><?php echo $number_of_users; ?></h6>
+                     
+
+                    </div>
+                  </div>
                 </div>
+            </div>
+           
+
+
+   </div>
+      
+          
+      <!-- normal users -->
+
+
+  <div class="col-xxl-4 col-md-4">
+      <div class="card info-card revenue-card">
+         <?php 
+            $select_admins = mysqli_query($conn, "SELECT * FROM `users` WHERE user_type = 'admin'") or die('query failed');
+            $number_of_admins = mysqli_num_rows($select_admins);
+         ?>
+         
+
+     <div class="card-body">
+                  <h5 class="card-title">Admin users</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-bar-chart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><?php echo $number_of_admins; ?></h6>
+                     
+
+                    </div>
+                  </div>
+                </div>  
+  </div>   </div>     
+               
+         
+      <!--admin users  -->
+
+   <div class="col-xxl-4 col-md-4">
+      <div class="card info-card revenue-card">
+         <?php 
+            $select_account = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
+            $number_of_account = mysqli_num_rows($select_account);
+         ?>
+      
+
+           <div class="card-body">
+                  <h5 class="card-title">Total Users</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-bar-chart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6><?php echo $number_of_account; ?></h6>
+                     
+
+                    </div>
+                  </div>
+         </div> 
+         </div>
+          </div>
+    
        </div>
-      </div>    
+  </div> 
+  
+      
+          
+              
+               <!-- total users card -->
+
+  
+       
+      
+          
             <!-- messeges  -->
 
 </section>
