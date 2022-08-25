@@ -142,7 +142,7 @@ if(isset($message)){
 
   
   <li class="nav-item">
-    <a class="nav-link " href="admin_page.php">
+    <a class="nav-link " href="admin_sales.php">
       <i class="bi bi-layout-text-window-reverse"></i>
       <span>sales report</span>
     </a>
