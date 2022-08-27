@@ -2,7 +2,7 @@
 
 
 include 'config.php';
-include 'admin_header.php';
+
 
 session_start();
 
@@ -53,6 +53,8 @@ if(isset($_POST['search'])){
 ?>
 
 <!DOCTYPE html>
+
+<?php include 'admin_header.php'; ?>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
@@ -142,6 +144,37 @@ if(isset($_POST['search'])){
 
 </section>
 
+<section class="user">
+<div class="col align-items-center mb-32">
+        <div class="col-lg-32">
+           
+      
+ <div class="col-lg-3 ml-12 ">
+    
+          <!-- Card with titles, buttons, and links -->
+          <?php
+         $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
+         while($fetch_users = mysqli_fetch_assoc($select_users)){
+      ?>
+          <div class=" card mb-32">
+            <div class="card-body">
+              <h5 class="card-title">user-id: <?php echo $fetch_users['id']; ?></h5>
+              <h3 class="card-title"> Name: <?php echo $fetch_users['name']; ?> </span></h1>
+              <h1 class="card-title"> Email: <?php echo $fetch_users['email']; ?></h1>
+              <h1 class="card-title"> User-type: <?php echo $fetch_users['user_type']; ?></h1>
+              <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="btn btn-primary">delete user</a>
+              
+             
+              <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?> class="card-link"">Update</a>
+             
+            </div>
+          </div><!-- End Card with titles, buttons, and links -->
+
+          <?php
+          } ?>
+
+ </div>
+</section>
 
 
 <section class="section">
@@ -149,7 +182,7 @@ if(isset($_POST['search'])){
 
 
    </div>
-   <a href="admin_registration.php" type="submit" name="submit" value="register now" class="btn">register</a>
+
 
 
    
@@ -190,34 +223,7 @@ if(isset($message)){
 
 </section>
 
-<section class="section">
-<div class="col align-items-center">
-        <div class="col-lg-32">
- <div class="col-lg-3  ">
-          <!-- Card with titles, buttons, and links -->
-          <?php
-         $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
-         while($fetch_users = mysqli_fetch_assoc($select_users)){
-      ?>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">user-id: <?php echo $fetch_users['id']; ?></h5>
-              <h3 class="card-title"> Name: <?php echo $fetch_users['name']; ?> </span></h1>
-              <h1 class="card-title"> Email: <?php echo $fetch_users['email']; ?></h1>
-              <h1 class="card-title"> User-type: <?php echo $fetch_users['user_type']; ?></h1>
-              <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="btn btn-primary">delete user</a>
-              
-             
-              <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?> class="card-link"">Update</a>
-             
-            </div>
-          </div><!-- End Card with titles, buttons, and links -->
 
-          <?php
-          } ?>
-
- </div>
-</section>
 </main>
 
 <!-- custom admin js file link  -->
