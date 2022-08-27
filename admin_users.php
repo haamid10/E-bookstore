@@ -144,7 +144,7 @@ if(isset($_POST['search'])){
 
 </section>
 
-<section class="user">
+<section class="d-flex">
 <div class="col align-items-center mb-32">
         <div class="col-lg-32">
            
