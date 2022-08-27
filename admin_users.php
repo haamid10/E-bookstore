@@ -82,6 +82,7 @@ if(isset($_POST['search'])){
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 
 
 </head>
@@ -144,12 +145,16 @@ if(isset($_POST['search'])){
 
 </section>
 
-<section class="d-flex">
-<div class="col align-items-center mb-32">
+<section class=" ">
+<div class="row align-items-center mb-32">
         <div class="col-lg-32">
            
       
- <div class="col-lg-3 ml-12 ">
+ <div class="row-lg-3 ml-12  ">
+   <div class="flex  flex-row justify-between items-center">
+
+
+
     
           <!-- Card with titles, buttons, and links -->
           <?php
