@@ -99,8 +99,7 @@ if(isset($_POST['search'])){
 </section>
 
 <section class="section" style="padding-top: 0;">
-<div class="row align-items-top">
-        <div class="col-lg-6">
+
    <?php
       if(isset($_POST['submit'])){
          $search_item = $_POST['search'];
@@ -141,17 +140,19 @@ if(isset($_POST['search'])){
 
 
 <section class="section">
-
+<div class="row align-items-top">
+        <div class="col-lg-3">
 
    <h1 class="title"> user accounts </h1>
 
-   <div class="box-container">
+   
       <?php
          $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
          while($fetch_users = mysqli_fetch_assoc($select_users)){
       ?>
-      <div class="box">
-         <p> user id : <span><?php echo $fetch_users['id']; ?></span> </p>
+      <div class="card">
+            <div class="card-body">
+         <p class="card-title"> user id : <span><?php echo $fetch_users['id']; ?></span> </p>
          <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
          <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
          <p> user type : <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
@@ -199,26 +200,35 @@ if(isset($message)){
       
    </form>
 
-   <div class="col-lg-3">
-          <!-- Card with titles, buttons, and links -->
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Card with titles, buttons, and links</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <p class="card-text"><a href="#" class="btn btn-primary">Button</a></p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div><!-- End Card with titles, buttons, and links -->
+  
    </div>
 </div>
 
 </section>
 
+
+ <div class="col-lg-3">
+          <!-- Card with titles, buttons, and links -->
+          <?php
+         $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
+         while($fetch_users = mysqli_fetch_assoc($select_users)){
+      ?>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $fetch_users['id']; ?></h5>
+              <h1 class="card-subtitle mb-2 text-muted"><?php echo $fetch_users['name']; ?></h1>
+              <h1 class="card-text"><?php echo $fetch_users['email']; ?></h1>
+              <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="btn btn-primary">delete user</a>
+              <p class="card-text"><a href="#" class="btn btn-primary">Button</a></p>
+             
+              <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?> class="card-link"">Update</a>
+             
+            </div>
+          </div><!-- End Card with titles, buttons, and links -->
+
+          <?php
+          } ?>
 </main>
-
-
 
 <!-- custom admin js file link  -->
 <script src="js/admin_script.js"></script>
