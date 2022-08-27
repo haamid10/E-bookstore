@@ -91,7 +91,7 @@ if(isset($_POST['search'])){
    <p> <a href="admin_users.php">users</a> / search </p>
 </div>
 
-<section class="search-form">
+<section class="section">
    <form action="" method="post">
       <input type="text" name="search" placeholder="search products..." class="box">
       <input type="submit" name="submit" value="search" class="btn">
@@ -114,6 +114,7 @@ if(isset($_POST['search'])){
       <input type="hidden" name="name" value="<?php echo $fetch_users['name']; ?>">
       <input type="hidden" name="email" value="<?php echo $fetch_users['price']; ?>">
       <input type="hidden" name="user_type" value="<?php echo $fetch_users['image']; ?>">
+
       <p> user id : <span><?php echo $fetch_users['id']; ?></span> </p>
          <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
          <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
@@ -139,7 +140,7 @@ if(isset($_POST['search'])){
 
 
 
-<section class="users">
+<section class="section">
 
 
    <h1 class="title"> user accounts </h1>
