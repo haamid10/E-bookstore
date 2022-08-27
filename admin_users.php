@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
    $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
    if(mysqli_num_rows($select_users) > 0){
-      $message[] = 'user!';
+      // $message[] = 'user!';
    }else{
       if($pass != $cpass){
          $message[] = 'confirm password not matched!';
@@ -99,10 +99,12 @@ if(isset($_POST['search'])){
    <p> <a href="admin_users.php">users</a> / search </p>
 </div>
 
-<section class="section">
-   <form action="" method="post">
+<section class="search-bar">
+   <form class="search-form d-flex align-items-center" action="" method="post">
       <input type="text" name="search" placeholder="search products..." class="box">
-      <input type="submit" name="submit" value="search" class="btn">
+      <!-- <input type="submit" name="submit" value="search" class="btn"> -->
+      <!-- <input type="text" name="query" placeholder="Search" title="Enter search keyword"> -->
+        <button><input type="submit" name="submit" value="search"><i class="bi bi-search"></i></button>
    </form>
 </section>
 
@@ -118,9 +120,7 @@ if(isset($_POST['search'])){
    <form action="" method="get" class="box">
      
       <input type="number"  class="qty" name="product_quantity" min="1" value="1">
-      <input type="hidden" name="name" value="<?php echo $fetch_users['name']; ?>">
-      <input type="hidden" name="email" value="<?php echo $fetch_users['price']; ?>">
-      <input type="hidden" name="user_type" value="<?php echo $fetch_users['image']; ?>">
+ 
 
       <p> user id : <span><?php echo $fetch_users['id']; ?></span> </p>
          <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
@@ -145,8 +145,10 @@ if(isset($_POST['search'])){
 
 </section>
 
+
+<!-- users -->
 <section class=" ">
-<div class="row align-items-center mb-32">
+ <div class="row align-items-center mb-32">
         <div class="col-lg-32">
            
       
@@ -161,7 +163,7 @@ if(isset($_POST['search'])){
          $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
          while($fetch_users = mysqli_fetch_assoc($select_users)){
       ?>
-          <div class=" card mb-32">
+          <div class=" card mb-32 ml-12">
             <div class="card-body">
               <h5 class="card-title">user-id: <?php echo $fetch_users['id']; ?></h5>
               <h3 class="card-title"> Name: <?php echo $fetch_users['name']; ?> </span></h1>
@@ -177,6 +179,9 @@ if(isset($_POST['search'])){
 
           <?php
           } ?>
+   </div>
+ </div>
+        </div>
 
  </div>
 </section>
