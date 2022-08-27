@@ -99,7 +99,10 @@ if(isset($_POST['search'])){
    <p> <a href="admin_users.php">users</a> / search </p>
 </div>
 
+
+<!-- search bar -->
 <section class="search-bar">
+ <h3 class=" font-bold text-blue-700 ">Search users here</h3>
    <form class="search-form d-flex align-items-center" action="" method="post">
       <input type="text" name="search" placeholder="search products..." class="box">
       <!-- <input type="submit" name="submit" value="search" class="btn"> -->
@@ -117,17 +120,25 @@ if(isset($_POST['search'])){
          if(mysqli_num_rows($select_users) > 0){
          while($fetch_users = mysqli_fetch_assoc($select_users)){
    ?>
-   <form action="" method="get" class="box">
-     
-      <input type="number"  class="qty" name="product_quantity" min="1" value="1">
+   
+   <div class="row align-items-center mb-32">
+        <div class="col-lg-32">
+           
+      
+ <div class="row-lg-3 ml-12  ">
+   <div class="flex  flex-row justify-between items-center">
+
+   <form action="" method="get" class=" card mb-32 ml-12">
+   <div class="card-body">
+      <!-- <input type="number"  class="qty" name="product_quantity" min="1" value="1"> -->
  
 
-      <p> user id : <span><?php echo $fetch_users['id']; ?></span> </p>
-         <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
-         <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
-         <p> user type : <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
+      <p class="card-title"> user id : <span><?php echo $fetch_users['id']; ?></span> </p>
+         <p class="card-title"> username : <span><?php echo $fetch_users['name']; ?></span> </p>
+         <p class="card-title"> email : <span><?php echo $fetch_users['email']; ?></span> </p>
+         <p class="card-title"> user type : <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
          <td>
-         <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete user</a>
+         <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="btn btn-primary">delete user</a>
          <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
          </td>
    </form>
@@ -144,6 +155,7 @@ if(isset($_POST['search'])){
   
 
 </section>
+<!-- end of search -->
 
 
 <!-- users -->
@@ -151,7 +163,7 @@ if(isset($_POST['search'])){
  <div class="row align-items-center mb-32">
         <div class="col-lg-32">
            
-      
+      <h1 class=" text-center font-bold text-blue-700 ">User Accounts</h1>
  <div class="row-lg-3 ml-12  ">
    <div class="flex  flex-row justify-between items-center">
 
@@ -185,14 +197,13 @@ if(isset($_POST['search'])){
 
  </div>
 </section>
-
+<!--  end of users list-->
 
 <section class="section">
-?>
 
 
-   </div>
 
+ 
 
 
    
