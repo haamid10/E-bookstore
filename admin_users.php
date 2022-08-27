@@ -58,7 +58,14 @@ if(isset($_POST['search'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>users</title>
+   <title>admin panel</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+   <!-- custom admin css file link  -->
+   <link rel="stylesheet" href="css/admin_style.css">
+
    <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -72,10 +79,8 @@ if(isset($_POST['search'])){
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <!-- <link href="assets/css/style.css" rel="stylesheet"> -->
-  <!-- <link rel="stylesheet" href="css/admin_style.css"> -->
-   
-<!--  -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
 
 </head>
 
@@ -140,28 +145,7 @@ if(isset($_POST['search'])){
 
 
 <section class="section">
-<div class="row align-items-top">
-        <div class="col-lg-3">
-
-   <h1 class="title"> user accounts </h1>
-
-   
-      <?php
-         $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
-         while($fetch_users = mysqli_fetch_assoc($select_users)){
-      ?>
-      <div class="card">
-            <div class="card-body">
-         <p class="card-title"> user id : <span><?php echo $fetch_users['id']; ?></span> </p>
-         <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
-         <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
-         <p> user type : <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
-         <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete user</a>
-         <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
-      </div>
-      <?php
-         };
-      ?>
+?>
 
 
    </div>
@@ -206,8 +190,10 @@ if(isset($message)){
 
 </section>
 
-
- <div class="col-lg-3">
+<section class="section">
+<div class="col align-items-center">
+        <div class="col-lg-32">
+ <div class="col-lg-3  ">
           <!-- Card with titles, buttons, and links -->
           <?php
          $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
@@ -215,11 +201,12 @@ if(isset($message)){
       ?>
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title"><?php echo $fetch_users['id']; ?></h5>
-              <h1 class="card-subtitle mb-2 text-muted"><?php echo $fetch_users['name']; ?></h1>
-              <h1 class="card-text"><?php echo $fetch_users['email']; ?></h1>
+              <h5 class="card-title">user-id: <?php echo $fetch_users['id']; ?></h5>
+              <h3 class="card-title"> Name: <?php echo $fetch_users['name']; ?> </span></h1>
+              <h1 class="card-title"> Email: <?php echo $fetch_users['email']; ?></h1>
+              <h1 class="card-title"> User-type: <?php echo $fetch_users['user_type']; ?></h1>
               <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="btn btn-primary">delete user</a>
-              <p class="card-text"><a href="#" class="btn btn-primary">Button</a></p>
+              
              
               <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?> class="card-link"">Update</a>
              
@@ -228,6 +215,9 @@ if(isset($message)){
 
           <?php
           } ?>
+
+ </div>
+</section>
 </main>
 
 <!-- custom admin js file link  -->
