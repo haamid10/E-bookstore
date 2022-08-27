@@ -159,14 +159,14 @@ if(isset($_POST['search'])){
 
 
 <!-- users -->
-<section class="bg-white">
+<section class="bg-white users">
  
         <!-- <div class="col-lg-32"> -->
            
       <h1 class=" text-center font-bold text-blue-700 ">User Accounts</h1>
-      <div class="flex flex-row justify-between">
- <!-- <div class="col-lg-3  ">
-   <div class="flex  flex-col justify-between items-center"> -->
+      <div class="flex flex-row  gap-14 justify-between">
+ <!-- <!-- <div class="col-lg-3  "> -->
+   <div class="box-container"> 
 
 
 
@@ -177,7 +177,7 @@ if(isset($_POST['search'])){
          while($fetch_users = mysqli_fetch_assoc($select_users)){
       ?>
           <div class=" card mb-32 ">
-            <div class="card-body  ">
+            <div class="card-body  box">
               <h5 class="card-title">user-id: <?php echo $fetch_users['id']; ?></h5>
               <h3 class="card-title"> Name: <?php echo $fetch_users['name']; ?> </span></h1>
               <h1 class="card-title"> Email: <?php echo $fetch_users['email']; ?></h1>
