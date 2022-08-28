@@ -145,10 +145,10 @@ if(isset($_POST['search'])){
    <?php
             }
          }else{
-            echo '<p class="empty">no result found!</p>';
+            echo '<p >no result found!</p>';
          }
       }else{
-         echo '<p class="empty">search something!</p>';
+         echo '<p >search something!</p>';
       }
    ?>
    </div>
@@ -230,7 +230,7 @@ if(isset($message)){
 <div class="card-body">
 
   <div class="pt-4 pb-2">
-    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
+    <h1 class="card-title text-center pb-0 fs-4">Register an Account</h1>
     <p class="text-center small">Enter your personal details to create account</p>
   </div>
 
@@ -251,7 +251,7 @@ if(isset($message)){
 
     <div class="col-12">
       <label for="yourPassword" class="form-label">Password</label>
-      <input type="password" name="password" class="form-control" id="yourPassword" required>
+      <input type="password" name="password" class="form-control" placeholder="enter password" id="yourPassword" required>
       <div class="invalid-feedback">Please enter your password!</div>
     </div>
     <div class="col-12">
