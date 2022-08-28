@@ -94,10 +94,15 @@ if(isset($_POST['search'])){
 
  <main class="main" id="main">
 
-<div class="heading">
-   <h3>search page</h3>
-   <p> <a href="admin_users.php">users</a> / search </p>
-</div>
+ <div class="pagetitle">
+      <h1>Manage users</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="admin_page.php">Home   </a></li>
+          <li class="breadcrumb-item active"><a href="admin_users.php">Users  </a></li>
+        </ol>
+      </nav>
+    </div>
 
 
 <!-- search bar -->
