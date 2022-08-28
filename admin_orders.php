@@ -65,38 +65,48 @@ if(isset($_GET['delete'])){
    
 <main class="main" id="main">
 
-<section class=" bg-white">
+<!-- <section class=" bg-white"> -->
 
 
 
-         <!-- <div class="flex flex-row  items-center justify-between"> -->
+         <!--  -->
       <!-- <div class="row align-items-top"> -->
 
          <!-- <div class="col-lg-3"> -->
 
    <!-- <h1 class="title">placed orders</h1> -->
 
-   <div class="box-container   ">
+   <!-- <div class="box-container   "> -->
+   <section class="bg-white users">
+ 
+ <!-- <div class="col-lg-32"> -->
+    
+<h1 class=" text-center font-bold text-blue-700 ">User Accounts</h1>
+<div class="flex flex-row  gap-14 justify-between">
+<!-- <!-- <div class="col-lg-3  "> -->
+<div class="box-container"> 
+
+   <div class="flex flex-row  items-center justify-between">
       
       <?php
       $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
       if(mysqli_num_rows($select_orders) > 0){
          while($fetch_orders = mysqli_fetch_assoc($select_orders)){
       ?>
-      <div class="card w-96 h-auto gap-32  ml-32 flex  flex-row justify-between items-center rounded-lg bg-slate-500">
+      <div class="card  ">
             
                
-      <div class="card-body box ">
+      <div class="card-body  box">
          
          <p class="card-title" > user id : <?php echo $fetch_orders['user_id']; ?> </p>
-         <p class="card-title"> placed on : <?php echo $fetch_orders['placed_on']; ?> </p>
-         <p class="card-title"> name : <?php echo $fetch_orders['name']; ?> </p>
-         <p class="card-title"> number : <?php echo $fetch_orders['number']; ?> </p>
-         <p class="card-title"> email : <?php echo $fetch_orders['email']; ?> </p>
-         <p class="card-title"> city : <?php echo $fetch_orders['city']; ?> </p>
-         <p class="card-title"> total products : <?php echo $fetch_orders['total_products']; ?> </p>
-         <p class="card-title"> total price : $<?php echo $fetch_orders['total_price']; ?> </p>
-         <p class="card-title"> payment method : <?php echo $fetch_orders['method']; ?> </p>
+         <p > placed on : <?php echo $fetch_orders['placed_on']; ?> </p>
+         <p> name : <?php echo $fetch_orders['name']; ?> </p>
+         <p> number : <?php echo $fetch_orders['number']; ?> </p>
+         <p> email : <?php echo $fetch_orders['email']; ?> </p>
+         <p> city : <?php echo $fetch_orders['city']; ?> </p>
+         <p> total products : <?php echo $fetch_orders['total_products']; ?> </p>
+         <p> total price : $<?php echo $fetch_orders['total_price']; ?> </p>
+         <p> payment method : <?php echo $fetch_orders['method']; ?> </p>
          <form action="" method="post">
             <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
             <select name="update_payment">
