@@ -29,15 +29,22 @@ if(isset($_GET['delete'])){
 ?>
 
 <!DOCTYPE html>
+
+<?php include 'admin_header.php'; ?>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>orders</title>
+   <title>admin panel</title>
 
-     <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+   <!-- custom admin css file link  -->
+   <link rel="stylesheet" href="css/admin_style.css">
+
+   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -51,48 +58,45 @@ if(isset($_GET['delete'])){
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-   <!-- font awesome cdn link  -->
-   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
-
-   <!-- custom admin css file link  -->
-   <!-- <link rel="stylesheet" href="css/admin_style.css"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 <body>
    
 <main class="main" id="main">
 
+<section class="orders bg-blue-50">
 
 
 
-<section class="bg-white users">
- 
- <!-- <div class="col-lg-32"> -->
-    
-<h1 class=" text-center font-bold text-blue-700 ">User Accounts</h1>
-<div class="flex flex-row  gap-14 justify-between">
-<!-- <!-- <div class="col-lg-3  "> -->
-<div class="box-container"> 
+         <!-- <div class="flex flex-row  items-center justify-between"> -->
+      <!-- <div class="row align-items-top"> -->
+
+         <!-- <div class="col-lg-3"> -->
+
    <!-- <h1 class="title">placed orders</h1> -->
 
-   <div class="box-container">
+   <div class="box-container   ">
+      
       <?php
       $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
       if(mysqli_num_rows($select_orders) > 0){
          while($fetch_orders = mysqli_fetch_assoc($select_orders)){
       ?>
-      <div class=" card mb-32 ">
-            <div class="card-body  box">>
-         <p class="card-title"> user id : <span><?php echo $fetch_orders['user_id']; ?></span> </p>
-         <p class="card-title"> placed on : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
-         <p class="card-title"> name : <span><?php echo $fetch_orders['name']; ?></span> </p>
-         <p> number : <span><?php echo $fetch_orders['number']; ?></span> </p>
-         <p> email : <span><?php echo $fetch_orders['email']; ?></span> </p>
-         <p> city : <span><?php echo $fetch_orders['city']; ?></span> </p>
-         <p> total products : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
-         <p> total price : <span>$<?php echo $fetch_orders['total_price']; ?></span> </p>
-         <p> payment method : <span><?php echo $fetch_orders['method']; ?></span> </p>
+      <div class="card">
+            <div class=" ml-32 flex  flex-row">
+               
+      <div class="card-body box">
+         
+         <p class="card-title" > user id : <?php echo $fetch_orders['user_id']; ?></span> </p>
+         <p> placed on : <?php echo $fetch_orders['placed_on']; ?></span> </p>
+         <p> name : <?php echo $fetch_orders['name']; ?></span> </p>
+         <p> number : <?php echo $fetch_orders['number']; ?></span> </p>
+         <p> email : <?php echo $fetch_orders['email']; ?></span> </p>
+         <p> city : <?php echo $fetch_orders['city']; ?></span> </p>
+         <p> total products : <?php echo $fetch_orders['total_products']; ?></span> </p>
+         <p> total price : $<?php echo $fetch_orders['total_price']; ?></span> </p>
+         <p> payment method : <?php echo $fetch_orders['method']; ?></span> </p>
          <form action="" method="post">
             <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
             <select name="update_payment">
@@ -111,22 +115,16 @@ if(isset($_GET['delete'])){
       <?php
          }
       }else{
-         echo '<p class="empty">no orders placed yet!</p>';
+         echo ' class="card-title"class="empty">no orders placed yet!</p>';
       }
       ?>
 
    </div>
-   </div>
-   </div>
-           </div>
+
 </section>
 
+
 </main>
-
-
-
-
-
 
 
 

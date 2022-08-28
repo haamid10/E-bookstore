@@ -247,6 +247,7 @@ section{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
    gap:1.5rem;
+   border: none;
    max-width: 1200px;
    margin:0 auto;
    align-items: flex-start;
@@ -255,6 +256,8 @@ section{
 .dashboard .box-container .box{
    border-radius: .5rem;
    padding:2rem;
+   border: none;
+
    background-color: var(--white);
    box-shadow: var(--box-shadow);
    border:var(--border);
@@ -264,6 +267,9 @@ section{
 .dashboard .box-container .box h3{
    font-size: 5rem;
    color:var(--black); 
+   border: none;
+   border: none;
+
 }
 
 .dashboard .box-container .box p{
@@ -395,7 +401,7 @@ section{
 .orders .box-container .box{
    background-color: var(--white);
    padding:2rem;
-   border:var(--border);
+   /* border:var(--border); */
    box-shadow: var(--box-shadow);
    border-radius: .5rem;
 }
@@ -419,7 +425,7 @@ section{
    margin:.5rem 0;
    width: 100%;
    background-color: var(--light-bg);
-   border:var(--border);
+   /* border:var(--border); */
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
    color:var(--black);
