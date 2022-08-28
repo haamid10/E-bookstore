@@ -65,19 +65,70 @@ if(isset($_GET['delete'])){
    
 <main class="main" id="main">
 
-<!-- <section class=" bg-white"> -->
+<section class="section">
 
+  <div class="col-lg-6">
+   <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Small tables</h5>
+              <p>Add <code>.table-sm</code> to make any <code>.table</code> more compact by cutting all cell padding in half.</p>
+              <!-- Small tables -->
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Start Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Brandon Jacob</td>
+                    <td>Designer</td>
+                    <td>28</td>
+                    <td>2016-05-25</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Bridie Kessler</td>
+                    <td>Developer</td>
+                    <td>35</td>
+                    <td>2014-12-05</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Ashleigh Langosh</td>
+                    <td>Finance</td>
+                    <td>45</td>
+                    <td>2011-08-12</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Angus Grady</td>
+                    <td>HR</td>
+                    <td>34</td>
+                    <td>2012-06-11</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Raheem Lehner</td>
+                    <td>Dynamic Division Officer</td>
+                    <td>47</td>
+                    <td>2011-04-19</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- End small tables -->
 
+            </div>
+          </div>
+  </div>
+</section>
 
-         <!--  -->
-      <!-- <div class="row align-items-top"> -->
-
-         <!-- <div class="col-lg-3"> -->
-
-   <!-- <h1 class="title">placed orders</h1> -->
-
-   <!-- <div class="box-container   "> -->
-   <section class="bg-white users">
+   <section class="bg-white ">
  
  <!-- <div class="col-lg-32"> -->
     
@@ -86,7 +137,7 @@ if(isset($_GET['delete'])){
 <!-- <!-- <div class="col-lg-3  "> -->
 <div class="box-container"> 
 
-   <div class="flex flex-row  items-center justify-between">
+   <!-- <div class="flex flex-row  items-center justify-between"> -->
       
       <?php
       $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
