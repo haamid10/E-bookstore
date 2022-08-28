@@ -218,8 +218,8 @@ if(isset($_POST['search'])){
 
 
    
-<?php
-if(isset($message)){
+   <?php
+   if(isset($message)){
    foreach($message as $message){
       echo '
       <div class="message">
@@ -228,12 +228,12 @@ if(isset($message)){
       </div>
       ';
    }
-}
-?>
+   }
+   ?>
    
-<div class="card mb-3">
+  <div class="card mb-3">
 
-<div class="card-body">
+   <div class="card-body">
 
   <div class="pt-4 pb-2">
     <h1 class="card-title text-center pb-0 fs-4">Register an Account</h1>

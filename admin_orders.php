@@ -53,7 +53,7 @@ if(isset($_GET['delete'])){
   <link href="assets/css/style.css" rel="stylesheet">
 
    <!-- font awesome cdn link  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
 
    <!-- custom admin css file link  -->
    <!-- <link rel="stylesheet" href="css/admin_style.css"> -->
@@ -63,11 +63,18 @@ if(isset($_GET['delete'])){
    
 <main class="main" id="main">
 
-<section class="orders">
 
 
-      </div>
-   <h1 class="title">placed orders</h1>
+
+<section class="bg-white users">
+ 
+ <!-- <div class="col-lg-32"> -->
+    
+<h1 class=" text-center font-bold text-blue-700 ">User Accounts</h1>
+<div class="flex flex-row  gap-14 justify-between">
+<!-- <!-- <div class="col-lg-3  "> -->
+<div class="box-container"> 
+   <!-- <h1 class="title">placed orders</h1> -->
 
    <div class="box-container">
       <?php
@@ -75,10 +82,11 @@ if(isset($_GET['delete'])){
       if(mysqli_num_rows($select_orders) > 0){
          while($fetch_orders = mysqli_fetch_assoc($select_orders)){
       ?>
-      <div class="box">
-         <p> user id : <span><?php echo $fetch_orders['user_id']; ?></span> </p>
-         <p> placed on : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
-         <p> name : <span><?php echo $fetch_orders['name']; ?></span> </p>
+      <div class=" card mb-32 ">
+            <div class="card-body  box">>
+         <p class="card-title"> user id : <span><?php echo $fetch_orders['user_id']; ?></span> </p>
+         <p class="card-title"> placed on : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
+         <p class="card-title"> name : <span><?php echo $fetch_orders['name']; ?></span> </p>
          <p> number : <span><?php echo $fetch_orders['number']; ?></span> </p>
          <p> email : <span><?php echo $fetch_orders['email']; ?></span> </p>
          <p> city : <span><?php echo $fetch_orders['city']; ?></span> </p>
@@ -108,8 +116,14 @@ if(isset($_GET['delete'])){
       ?>
 
    </div>
-
+   </div>
+   </div>
+           </div>
 </section>
+
+</main>
+
+
 
 
 
