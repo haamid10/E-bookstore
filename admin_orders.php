@@ -73,17 +73,30 @@ if(isset($_GET['delete'])){
               <h5 class="card-title">Small tables</h5>
               <p>Add <code>.table-sm</code> to make any <code>.table</code> more compact by cutting all cell padding in half.</p>
               <!-- Small tables -->
-              <table class="table table-sm">
+              <table class="table table-lg">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Start Date</th>
+                   
+                        <th scope="col"> Id</th>       
+                        <th scope="col">name</th>          
+                        <th scope="col">phone</th>         
+                        <th scope="col">city</th>          
+                           
+                        <th scope="col">email</th>         
+                        <th scope="col">quantity</th>       
+                        <th scope="col">price</th>           
+                        <th scope="col"> method</th>
+                        <th scope="col">placedon</th>     
+                        <th scope="col"> status</th>
                   </tr>
                 </thead>
                 <tbody>
+                <?php
+                        // $sn = 1;
+                        $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
+                        if(mysqli_num_rows($select_orders) > 0){
+                           while($fetch_orders = mysqli_fetch_assoc($select_orders)){
+                       ?>
                   <tr>
                     <th scope="row">1</th>
                     <td>Brandon Jacob</td>
