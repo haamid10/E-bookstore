@@ -67,13 +67,13 @@ if(isset($_GET['delete'])){
 
 <section class="section">
 
-  <div class="col-lg-6">
+  <div class="col-lg-9">
    <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Small tables</h5>
-              <p>Add <code>.table-sm</code> to make any <code>.table</code> more compact by cutting all cell padding in half.</p>
+              <h5 class="card-title">Order  tables</h5>
+             
               <!-- Small tables -->
-              <table class="table table-lg">
+              <table class="table table-hover">
                 <thead>
                   <tr>
                    
@@ -88,6 +88,10 @@ if(isset($_GET['delete'])){
                         <th scope="col"> method</th>
                         <th scope="col">placedon</th>     
                         <th scope="col"> status</th>
+                        <th  scope="col-lg">placedon</th>     
+                        <th scope="col"> status</th>
+                        <th scope="col"> status</th>
+
                   </tr>
                 </thead>
                 <tbody>
@@ -98,40 +102,43 @@ if(isset($_GET['delete'])){
                            while($fetch_orders = mysqli_fetch_assoc($select_orders)){
                        ?>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Brandon Jacob</td>
-                    <td>Designer</td>
-                    <td>28</td>
-                    <td>2016-05-25</td>
+                  <td scope="row"><?php echo $fetch_orders['user_id'];  ?></td>
+                                <td><?php echo $fetch_orders['name'];  ?></td>
+                                <td><?php echo $fetch_orders['number'];  ?></td>
+                                <td><?php echo $fetch_orders['city'];  ?></td>
+                           
+                                <td><?php echo $fetch_orders['email'];  ?></td>
+                                <td><?php echo $fetch_orders['total_products'];  ?></td>
+                                <td><?php echo $fetch_orders['total_price'];  ?></td>
+
+                                
+                                <td><?php echo $fetch_orders['payment_status'];  ?></td>
+                                <td><?php echo $fetch_orders['placed_on'];  ?></td>
+                                <td><?php echo $fetch_orders['method'];  ?></td>
+                               
+            <td> <form action="" method="post">
+               <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>"></td>
+            <td><select name="update_payment">
+               <option value="" selected disabled><?php echo $fetch_orders['payment_status']; ?></option>
+               <option value="pending">pending</option>
+               <option value="completed">completed</option>
+            </select></td>
+         
+           <td> <input type="submit" value="update" name="update_order" class="btn btn-secondary"></td> 
+           <td>   <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('delete this order?');" class="btn btn-primary">delete</a>
+           </form>
+         </td>
+          
+            
+         
+                                
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Bridie Kessler</td>
-                    <td>Developer</td>
-                    <td>35</td>
-                    <td>2014-12-05</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Ashleigh Langosh</td>
-                    <td>Finance</td>
-                    <td>45</td>
-                    <td>2011-08-12</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Angus Grady</td>
-                    <td>HR</td>
-                    <td>34</td>
-                    <td>2012-06-11</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Raheem Lehner</td>
-                    <td>Dynamic Division Officer</td>
-                    <td>47</td>
-                    <td>2011-04-19</td>
-                  </tr>
+                  <?php
+                            $sn++;
+                        }
+                      }
+                    
+                        ?>
                 </tbody>
               </table>
               <!-- End small tables -->
