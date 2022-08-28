@@ -70,7 +70,7 @@ if(isset($_GET['delete'])){
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="admin_page.php">Home   </a></li>
-          <li class="breadcrumb-item active"><a href="admin_orders.php">Users  </a></li>
+          <li class="breadcrumb-item active"><a href="admin_orders.php">Orders  </a></li>
         </ol>
       </nav>
     </div>
