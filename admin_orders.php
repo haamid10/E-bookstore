@@ -65,7 +65,15 @@ if(isset($_GET['delete'])){
    
 <main class="main" id="main">
 
-
+<div class="pagetitle">
+      <h1>Manage orders</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="admin_page.php">Home   </a></li>
+          <li class="breadcrumb-item active"><a href="admin_orders.php">Users  </a></li>
+        </ol>
+      </nav>
+    </div>
 
    <section class="bg-white ">
  
@@ -78,7 +86,7 @@ if(isset($_GET['delete'])){
   <div class="col-lg-16">
    <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Order  tables</h5>
+              <!-- <h5 class="card-title">Order  tables</h5> -->
              
               <!-- Small tables -->
               <table class="table table-hover">
@@ -94,11 +102,10 @@ if(isset($_GET['delete'])){
                         <th scope="col">quantity</th>       
                         <th scope="col">price</th>           
                         <th scope="col"> method</th>
-                        <th scope="col">placedon</th>     
+                        <th scope="col">date</th>     
                         <th scope="col"> status</th>
-                        <th  scope="col-lg">placedon</th>     
-                        <th scope="col"> status</th>
-                        <th scope="col"> status</th>
+                        <th scope="col"> update</th>
+                       
 
                   </tr>
                 </thead>
