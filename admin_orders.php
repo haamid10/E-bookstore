@@ -65,9 +65,17 @@ if(isset($_GET['delete'])){
    
 <main class="main" id="main">
 
+
+
+   <section class="bg-white ">
+ 
+ <!-- <div class="col-lg-32"> -->
+    
+<h1 class=" text-center font-bold text-blue-700 ">user orders</h1>
+
 <section class="section">
 
-  <div class="col-lg-9">
+  <div class="col-lg-16">
    <div class="card">
             <div class="card-body">
               <h5 class="card-title">Order  tables</h5>
@@ -148,60 +156,6 @@ if(isset($_GET['delete'])){
   </div>
 </section>
 
-   <section class="bg-white ">
- 
- <!-- <div class="col-lg-32"> -->
-    
-<h1 class=" text-center font-bold text-blue-700 ">User Accounts</h1>
-<div class="flex flex-row  gap-14 justify-between">
-<!-- <!-- <div class="col-lg-3  "> -->
-<div class="box-container"> 
-
-   <!-- <div class="flex flex-row  items-center justify-between"> -->
-      
-      <?php
-      $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
-      if(mysqli_num_rows($select_orders) > 0){
-         while($fetch_orders = mysqli_fetch_assoc($select_orders)){
-      ?>
-      <div class="card  ">
-            
-               
-      <div class="card-body  box">
-         
-         <p class="card-title" > user id : <?php echo $fetch_orders['user_id']; ?> </p>
-         <p > placed on : <?php echo $fetch_orders['placed_on']; ?> </p>
-         <p> name : <?php echo $fetch_orders['name']; ?> </p>
-         <p> number : <?php echo $fetch_orders['number']; ?> </p>
-         <p> email : <?php echo $fetch_orders['email']; ?> </p>
-         <p> city : <?php echo $fetch_orders['city']; ?> </p>
-         <p> total products : <?php echo $fetch_orders['total_products']; ?> </p>
-         <p> total price : $<?php echo $fetch_orders['total_price']; ?> </p>
-         <p> payment method : <?php echo $fetch_orders['method']; ?> </p>
-         <form action="" method="post">
-            <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
-            <select name="update_payment">
-               <option value="" selected disabled><?php echo $fetch_orders['payment_status']; ?></option>
-               <option value="pending">pending</option>
-               <option value="completed">completed</option>
-            </select>
-         
-            <input type="submit" value="update" name="update_order" class="option-btn">
-            <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('delete this order?');" class="delete-btn">delete</a>
-            
-         </form>
-        
-         
-      </div>
-      <?php
-         }
-      }else{
-         echo ' class="card-title"class="empty">no orders placed yet!</p>';
-      }
-      ?>
-
-   </div>
-
 </section>
 
 
@@ -220,3 +174,4 @@ if(isset($_GET['delete'])){
 </html>
 
 
+<!-- -->
