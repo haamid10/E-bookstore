@@ -30,7 +30,7 @@ if(isset($_GET['delete'])){
 
 <!DOCTYPE html>
 
-<?php include 'admin_header.php'; ?>
+
 <html lang="en">
 <head>
    <meta charset="UTF-8">
