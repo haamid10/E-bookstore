@@ -89,6 +89,8 @@ if(isset($_POST['add_to_cart'])){
 
 
 <section >
+
+
    <section class="products">
 <h1 class="title">latest products</h1>
 
