@@ -103,7 +103,7 @@ if(isset($_POST['search'])){
 
 
 
- <div >
+ <section class="section " id="section">
    <?php
       if(isset($_POST['submit'])){
          $search_item = $_POST['search'];
@@ -112,28 +112,36 @@ if(isset($_POST['search'])){
          while($fetch_sales = mysqli_fetch_assoc($select_sales)){
    ?>
    <form action="" method="post" >
-   <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Summury Report </h2>
-                <table class="table table-bordered   " >
-                    <th scope="col"ead>
-                        <tr>
-                        <th>user Id</th>       
-                        <th>name</th>          
-                        <th>phone</th>         
-                        <th>city</th>          
-                        <th>country</th>       
-                        <th>street</th>        
-                        <th>email</th>         
-                        <th>quantity</th>       
-                        <th>price</th>           
-                        <th>payment method</th>
-                        <th>placed on</th>     
-                        <th>payment status</th>
-                        </tr>
-                    </th>
-                    <tbody>
+       <div class=" mr-32">
+   <div class="col-lg-44">
+   <div class="card">
+            <div class="card-body">
+              <!-- <h5 class="card-title">Order  tables</h5> -->
+             
+              <!-- Small tables -->
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                   
+                       
+                        <th scope="col">user Id</th>       
+                        <th scope="col">name</th>          
+                        <th scope="col">phone</th>         
+                        <th scope="col">city</th>          
+                        <th scope="col">country</th>       
+                        <th scope="col">street</th>        
+                        <th scope="col">email</th>         
+                        <th scope="col">quantity</th>       
+                        <th scope="col">price</th>           
+                        <th scope="col">payment method</th>
+                        <th scope="col">placed on</th>     
+                        <th scope="col">payment status</th>
+                       
+                       
+
+                  </tr>
+                </thead>
+                <tbody>
                 
                 
       <input type="hidden"  class="qty" name="total_product" min="1" value="1">
@@ -160,6 +168,8 @@ if(isset($_POST['search'])){
                 </tbody>
   
          </table>
+            </div>
+   </div></div>
    </form>
      <?php
             }
@@ -172,10 +182,13 @@ if(isset($_POST['search'])){
         }
       ?>
    
-   </div>
+ </section>
    
    
 <!-- ende of search -->
+
+
+
 
 
 <section class="section">
@@ -247,7 +260,7 @@ if(isset($_POST['search'])){
                 </tbody>
               </table>
               <div class="text-center">
-                <button  id="print-btn"><a class="btn btn-primary" href="sales_print.php"> print now </a> </button>
+                <button  class="btn btn-primary" id="print-btn"><a class="btn btn-primary" href="sales_print.php"> print now </a> </button>
                 </div>
               <!-- End small tables -->
 
@@ -255,7 +268,6 @@ if(isset($_POST['search'])){
           </div>
   </div>
 </section>
-<!-- ende of sales report -->
 
 </main>
 
