@@ -247,7 +247,7 @@ if(isset($_POST['search'])){
                 </tbody>
               </table>
               <div class="text-center">
-                <button  class="btn btn-primary" id="print-btn"><a href="sales_print.php"> print now </a></button>
+                <button  id="print-btn"><a class="btn btn-primary" href="sales_print.php"> print now </a> </button>
                 </div>
               <!-- End small tables -->
 
@@ -255,6 +255,7 @@ if(isset($_POST['search'])){
           </div>
   </div>
 </section>
+<!-- ende of sales report -->
 
 </main>
 
