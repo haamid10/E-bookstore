@@ -111,7 +111,7 @@ if(isset($_POST['search'])){
             <div class="col-md-12">
                 <h2>Summury Report </h2>
                 <table class="table table-bordered   " >
-                    <thead>
+                    <th scope="col"ead>
                         <tr>
                         <th>user Id</th>       
                         <th>name</th>          
@@ -126,7 +126,7 @@ if(isset($_POST['search'])){
                         <th>placed on</th>     
                         <th>payment status</th>
                         </tr>
-                    </thead>
+                    </th>
                     <tbody>
                 
                 
@@ -307,18 +307,20 @@ include 'config.php';
                 <thead>
                   <tr>
                    
-                        <th scope="col"> Id</th>       
+                       
+                        <th scope="col">user Id</th>       
                         <th scope="col">name</th>          
                         <th scope="col">phone</th>         
                         <th scope="col">city</th>          
-                           
+                        <th scope="col">country</th>       
+                        <th scope="col">street</th>        
                         <th scope="col">email</th>         
                         <th scope="col">quantity</th>       
                         <th scope="col">price</th>           
-                        <th scope="col"> method</th>
-                        <th scope="col">date</th>     
-                        <th scope="col"> status</th>
-                        <th scope="col"> update</th>
+                        <th scope="col">payment method</th>
+                        <th scope="col">placed on</th>     
+                        <th scope="col">payment status</th>
+                       
                        
 
                   </tr>
@@ -335,11 +337,13 @@ include 'config.php';
                                 <td><?php echo $fetch_orders['name'];  ?></td>
                                 <td><?php echo $fetch_orders['number'];  ?></td>
                                 <td><?php echo $fetch_orders['city'];  ?></td>
-                           
+                                <td><?php echo $fetch_orders['country'];  ?></td>
+                                <td><?php echo $fetch_orders['street'];  ?></td>
                                 <td><?php echo $fetch_orders['email'];  ?></td>
                                 <td><?php echo $fetch_orders['total_products'];  ?></td>
                                 <td><?php echo $fetch_orders['total_price'];  ?></td>
-
+                                
+                                
                                 
                                 <td><?php echo $fetch_orders['payment_status'];  ?></td>
                                 <td><?php echo $fetch_orders['placed_on'];  ?></td>
@@ -359,6 +363,9 @@ include 'config.php';
                         ?>
                 </tbody>
               </table>
+              <div class="text-center">
+                <button  class="btn btn-primary" id="print-btn"><a href="sales_print.php"> print now </a></button>
+                </div>
               <!-- End small tables -->
 
             </div>
