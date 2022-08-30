@@ -83,10 +83,15 @@ if(isset($_POST['search'])){
 
 <body>
     <main class="main" id="main">
-<div class="heading">
-   <h3>sales page</h3>
-   <p> <a href="admin_page.php">home</a> / search </p>
-</div>
+    <div class="pagetitle">
+      <h1>Summery Reports</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="admin_page.php">Home   </a></li>
+          <li class="breadcrumb-item active"><a href="admin_sales.php">Report  </a></li>
+        </ol>
+      </nav>
+    </div>
 
 <!-- sales search -->
 <section class="search-form">
@@ -98,7 +103,7 @@ if(isset($_POST['search'])){
 
 
 
-   <div >
+ <div >
    <?php
       if(isset($_POST['submit'])){
          $search_item = $_POST['search'];
@@ -156,16 +161,16 @@ if(isset($_POST['search'])){
   
          </table>
    </form>
-   <?php
+     <?php
             }
          }else{
             echo '<p class="empty">no result found!</p>';
          }
          
-      }else{
+        }else{
          echo '<p class="empty">search something!</p>';
-      }
-   ?>
+        }
+      ?>
    
    </div>
    
@@ -173,7 +178,7 @@ if(isset($_POST['search'])){
 <!-- ende of search -->
 
 
-    <section class="section">
+<section class="section">
 
   <div class="col-lg-16">
    <div class="card">
