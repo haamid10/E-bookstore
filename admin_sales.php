@@ -174,11 +174,11 @@ if(isset($_POST['search'])){
      <?php
             }
          }else{
-            echo '<p class="empty">no result found!</p>';
+            echo '<p ">no result found!</p>';
          }
          
         }else{
-         echo '<p class="empty">search something!</p>';
+         echo '<p >search something!</p>';
         }
       ?>
    
@@ -260,7 +260,7 @@ if(isset($_POST['search'])){
                 </tbody>
               </table>
               <div class="text-center">
-                <button  class="btn btn-primary" id="print-btn"><a class="btn btn-primary" href="sales_print.php"> print now </a> </button>
+                <button   id="print-btn"><a class="btn btn-primary" href="sales_print.php"> print now </a> </button>
                 </div>
               <!-- End small tables -->
 
