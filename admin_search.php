@@ -74,7 +74,7 @@ if(isset($_POST['search'])){
          if(mysqli_num_rows($select_sales) > 0){
          while($fetch_sales = mysqli_fetch_assoc($select_sales)){
    ?>
-   <form action="" method="post"  class="mr-12 p-12">
+   <form action="" method="post"  class="">
 
 <!--  -->
 <div class="container">
@@ -146,7 +146,83 @@ if(isset($_POST['search'])){
                     <button> <a href="admin_sales.php" class="btn btn-primary" id="print-btn">print</a> </button>
                     <button onclick="window.print();" class="btn btn-primary" id="print-btn">print now</button>
                 </div>
-   
+</section>              
+
+
+<section class="ml-0 mr-12 bg-gray-50 ">
+<?php
+      if(isset($_POST['submit'])){
+         $search_item = $_POST['search'];
+         $select_sales = mysqli_query($conn, "SELECT * FROM `orders` WHERE name LIKE '%{$search_item}%'") or die('query failed');
+         if(mysqli_num_rows($select_sales) > 0){
+         while($fetch_sales = mysqli_fetch_assoc($select_sales)){
+   ?>
+
+               
+                <form action="" method="post"  class="">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-900 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+               
+                       <th   scope="col" class="py-3 px-6">user Id</th>       
+                        <th  scope="col" class="py-3 px-6" >name</th>          
+                        <th  scope="col" class="py-3 px-6" >phone</th>
+                        <th  scope="col" class="py-3 px-6" >price</th>           
+                        <th  scope="col" class="py-3 px-6" >city</th>          
+                        <th  scope="col" class="py-3 px-6" >country</th>       
+                        <th  scope="col" class="py-3 px-6" >street</th>        
+                        <th  scope="col" class="py-3 px-6" >email</th>         
+                        <th  scope="col" class="py-3 px-6" >quantity</th>                     
+                        <th  scope="col" class="py-3 px-6" >payment method</th>
+                        <th  scope="col" class="py-3 px-6" >placed on</th>     
+                        <th  scope="col" class="py-3 px-6" >payment status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Apple MacBook Pro 17"
+                </th>
+                <td class="py-4 px-6">
+                    Sliver
+                </td> -->
+                <input type="hidden"   name="total_product" min="1" value="1">
+      <input type="hidden" name="id" value="<?php echo $fetch_sales['id']; ?>">
+     <td   class="py-4 px-6"> <input type="text" name="user_id" value="<?php echo $fetch_sales['user_id']; ?>"></td>
+      <td   class="py-4 px-6"><input type="text" name="name" value="<?php echo $fetch_sales['name']; ?>"></td>
+     <td   class="py-4 px-6"> <input type="text" name="name" value="<?php echo $fetch_sales['number']; ?>"></td>
+      <td   class="py-4 px-6"><input type="text" name="name" value="<?php echo $fetch_sales['total_price']; ?>"></td>
+      <td   class="py-4 px-6"><input type="text" name="name" value="<?php echo $fetch_sales['city']; ?>"></td>
+      <td   class="py-4 px-6"> <input type="text" name="name" value="<?php echo $fetch_sales['country']; ?>"></td>
+      <td   class="py-4 px-6"> <input type="text" name="name" value="<?php echo $fetch_sales['street']; ?>"> </td>
+     <td   class="py-4 px-6"> <input type="text" name="name" value="<?php echo $fetch_sales['email']; ?>"> </td>
+     <td   class="py-4 px-6"> <input type="text" name="name" value="<?php echo $fetch_sales['total_products']; ?>"> </td>
+     <td   class="py-4 px-6"> <input type="text" name="name" value="<?php echo $fetch_sales['method']; ?>"> </td>
+
+     <td   class="py-4 px-6"> <input type="text" name="name" value="<?php echo $fetch_sales['placed_on']; ?>"> </td>
+     <td   class="py-4 px-6"> <input type="text" name="name" value="<?php echo $fetch_sales['payment_status']; ?>"> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+                </form>
+                <?php
+            }
+         }else{
+            echo '<p ">no result found!</p>';
+         }
+         
+        }else{
+         echo '<p >search something!</p>';
+        }
+      ?>
+         <div class="text-center">
+                    <button> <a href="admin_sales.php" class="btn btn-primary" id="print-btn">print</a> </button>
+                    <button onclick="window.print();" class="btn btn-primary" id="print-btn">print now</button>
+                </div>
+                
+
+
  </section>
 </body>
 </html>
