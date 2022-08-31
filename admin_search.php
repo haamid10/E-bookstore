@@ -65,7 +65,8 @@ if(isset($_POST['search'])){
       <input type="submit" name="submit" value="search" class="btn">
    </form>
    <h2>Summury Report</h2>
-
+</section>
+<section class="ml-0 mr-12 bg-gray-50 ">
 <?php
       if(isset($_POST['submit'])){
          $search_item = $_POST['search'];
@@ -73,16 +74,16 @@ if(isset($_POST['search'])){
          if(mysqli_num_rows($select_sales) > 0){
          while($fetch_sales = mysqli_fetch_assoc($select_sales)){
    ?>
-   <form action="" method="post" >
+   <form action="" method="post"  class="mr-12 p-12">
 
 <!--  -->
 <div class="container">
 
-        <div class="row mb-32">
-            <div class="col-lg-44">
+        <div class="row ">
+            <div class="col-2">
             
                 
-                <table class="table table-hover" >
+                <table class="table " >
                     <thead>
                         <tr>
                         <th >user Id</th>       
@@ -93,8 +94,7 @@ if(isset($_POST['search'])){
                         <th >country</th>       
                         <th >street</th>        
                         <th >email</th>         
-                        <th >quantity</th>       
-                                 
+                        <th >quantity</th>                     
                         <th >payment method</th>
                         <th >placed on</th>     
                         <th >payment status</th>
