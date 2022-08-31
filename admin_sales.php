@@ -78,6 +78,8 @@ if(isset($_POST['search'])){
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+   
+    <script src="https://kit.fontawesome.com/d8cfbe84b9.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -112,18 +114,18 @@ if(isset($_POST['search'])){
          while($fetch_sales = mysqli_fetch_assoc($select_sales)){
    ?>
    <form action="" method="post" >
-       <div class=" mr-32">
-   <div class="col-lg-44">
-   <div class="card">
-            <div class="card-body">
-              <!-- <h5 class="card-title">Order  tables</h5> -->
-             
-              <!-- Small tables -->
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                   
-                       
+
+<!--  -->
+<div class="container">
+<div class="card">
+        <div class="row">
+            <div class="col-md-32">
+            
+                <h2>Summury Report</h2>
+                <table class="table table-bordered   " >
+                    <thead>
+                        <tr>
+                                                
                         <th scope="col">user Id</th>       
                         <th scope="col">name</th>          
                         <th scope="col">phone</th>         
@@ -274,6 +276,7 @@ if(isset($_POST['search'])){
 
     <script src="../assets/scripts/admin_bus.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
