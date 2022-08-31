@@ -96,16 +96,12 @@ if(isset($_POST['search'])){
     </div>
 
 <!-- sales search -->
-<section class="search-form">
-   <form action="" method="post">
-      <input type="text" name="search" placeholder="search products..." class="box">
+<section class="section">
+   <form action="" method="post" class="search-form">
+      <input type="text" name="search" placeholder="search products..." >
       <input type="submit" name="submit" value="search" class="btn">
    </form>
-</section>
 
-
-
- <section class="section " id="section">
    <?php
       if(isset($_POST['submit'])){
          $search_item = $_POST['search'];
@@ -122,22 +118,23 @@ if(isset($_POST['search'])){
             <div class="col-md-32">
             
                 <h2>Summury Report</h2>
-                <table class="table table-bordered   " >
+                <table class="table table-hover" >
                     <thead>
                         <tr>
                                                 
-                        <th scope="col">user Id</th>       
-                        <th scope="col">name</th>          
-                        <th scope="col">phone</th>         
-                        <th scope="col">city</th>          
-                        <th scope="col">country</th>       
-                        <th scope="col">street</th>        
-                        <th scope="col">email</th>         
-                        <th scope="col">quantity</th>       
-                        <th scope="col">price</th>           
-                        <th scope="col">payment method</th>
-                        <th scope="col">placed on</th>     
-                        <th scope="col">payment status</th>
+                        <th >user Id</th>       
+                        <th >name</th>          
+                        <th >phone</th>
+                        <th >price</th>           
+                        <th >city</th>          
+                        <th >country</th>       
+                        <th >street</th>        
+                        <th >email</th>         
+                        <th >quantity</th>       
+                                 
+                        <th >payment method</th>
+                        <th >placed on</th>     
+                        <th >payment status</th>
                        
                        
 
@@ -146,7 +143,7 @@ if(isset($_POST['search'])){
                 <tbody>
                 
                 
-      <input type="hidden"  class="qty" name="total_product" min="1" value="1">
+      <input type="hidden"   name="total_product" min="1" value="1">
       <input type="hidden" name="id" value="<?php echo $fetch_sales['id']; ?>">
      <td> <input type="text" name="user_id" value="<?php echo $fetch_sales['user_id']; ?>"></td>
       <td><input type="text" name="name" value="<?php echo $fetch_sales['name']; ?>"></td>
@@ -183,6 +180,10 @@ if(isset($_POST['search'])){
          echo '<p >search something!</p>';
         }
       ?>
+         <div class="text-center">
+                    <button> <a href="admin_search.php" class="btn btn-primary" id="print-btn">Back</a> </button>
+                    <button onclick="window.print();" class="btn btn-primary" id="print-btn">print now</button>
+                </div>
    
  </section>
    
