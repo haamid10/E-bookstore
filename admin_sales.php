@@ -97,91 +97,9 @@ if(isset($_POST['search'])){
 
 <!-- sales search -->
 <section class="section">
-   <form action="" method="post" class="search-form">
-      <input type="text" name="search" placeholder="search products..." >
-      <input type="submit" name="submit" value="search" class="btn">
-   </form>
-
-   <?php
-      if(isset($_POST['submit'])){
-         $search_item = $_POST['search'];
-         $select_sales = mysqli_query($conn, "SELECT * FROM `orders` WHERE name LIKE '%{$search_item}%'") or die('query failed');
-         if(mysqli_num_rows($select_sales) > 0){
-         while($fetch_sales = mysqli_fetch_assoc($select_sales)){
-   ?>
-   <form action="" method="post" >
-
-<!--  -->
-<div class="container">
-<div class="card">
-        <div class="row">
-            <div class="col-md-32">
-            
-                <h2>Summury Report</h2>
-                <table class="table table-hover" >
-                    <thead>
-                        <tr>
-                                                
-                        <th >user Id</th>       
-                        <th >name</th>          
-                        <th >phone</th>
-                        <th >price</th>           
-                        <th >city</th>          
-                        <th >country</th>       
-                        <th >street</th>        
-                        <th >email</th>         
-                        <th >quantity</th>       
-                                 
-                        <th >payment method</th>
-                        <th >placed on</th>     
-                        <th >payment status</th>
-                       
-                       
-
-                  </tr>
-                </thead>
-                <tbody>
-                
-                
-      <input type="hidden"   name="total_product" min="1" value="1">
-      <input type="hidden" name="id" value="<?php echo $fetch_sales['id']; ?>">
-     <td> <input type="text" name="user_id" value="<?php echo $fetch_sales['user_id']; ?>"></td>
-      <td><input type="text" name="name" value="<?php echo $fetch_sales['name']; ?>"></td>
-     <td> <input type="text" name="name" value="<?php echo $fetch_sales['number']; ?>"></td>
-      <td><input type="text" name="name" value="<?php echo $fetch_sales['total_price']; ?>"></td>
-      <td><input type="text" name="name" value="<?php echo $fetch_sales['city']; ?>"></td>
-      <td> <input type="text" name="name" value="<?php echo $fetch_sales['country']; ?>"></td>
-      <td> <input type="text" name="name" value="<?php echo $fetch_sales['street']; ?>"> </td>
-     <td> <input type="text" name="name" value="<?php echo $fetch_sales['total_products']; ?>"> </td>
-     <td> <input type="text" name="name" value="<?php echo $fetch_sales['payment_status']; ?>"> </td>
-     <td> <input type="text" name="name" value="<?php echo $fetch_sales['method']; ?>"> </td>
-
-
-     <td> <input type="text" name="name" value="<?php echo $fetch_sales['email']; ?>"> </td>
-     <td> <input type="text" name="name" value="<?php echo $fetch_sales['placed_on']; ?>"> </td>
-     <td> <input type="text" name="name" value="<?php echo $fetch_sales['country']; ?>"> </td>
-
-     
-
-
-                </tbody>
   
-         </table>
-            </div>
-   </div></div>
-   </form>
-     <?php
-            }
-         }else{
-            echo '<p ">no result found!</p>';
-         }
-         
-        }else{
-         echo '<p >search something!</p>';
-        }
-      ?>
          <div class="text-center">
-                    <button> <a href="admin_search.php" class="btn btn-primary" id="print-btn">print</a> </button>
+                    <button> <a href="admin_search.php" class="btn btn-primary" id="print-btn">Search </a> </button>
                 </div>
    
  </section>
