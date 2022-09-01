@@ -71,7 +71,7 @@ if(isset($_POST['search'])){
 
 
 
-<section class="overflow-x-auto relative shadow-md lg:rounded-lg  bg-blue-100 w-full pr-12">
+<section class="overflow-x-auto relative shadow-md lg:rounded-lg >
 <?php
       if(isset($_POST['submit'])){
          $search_item = $_POST['search'];
@@ -81,9 +81,9 @@ if(isset($_POST['search'])){
    ?>
 
                
-                <form action="" method="post"  class="" class="w-32 h-auto text-sm text-left text-black dark:text-gray-400">
-    <table class="w-fit" >
-        <thead class="text-xs text-black uppercase bg-gray-50  dark:text-gray-400 " >
+                <form action="" method="post"  class="" class="w-32 h-auto t">
+    <table class="w-fit border-1 border-b-10 text-xl text-left text-black" >
+        <thead class="text-xl text-black uppercase bg-gray-50  dark:text-gray-400 " >
             <tr class=" w-2">
                
                        <th   scope="col" class="py-1 px-1">user Id</th>       
@@ -110,19 +110,19 @@ if(isset($_POST['search'])){
                 </td> -->
                 <input type="hidden"   name="total_product" min="1" value="1">
       <input type="hidden" name="id" value="<?php echo $fetch_sales['id']; ?>">
-     <td   class=" w-2"> <input type="text" name="user_id" value="<?php echo $fetch_sales['user_id']; ?>"></td>
-      <td   class=" w-2"><input type="text" name="name" value="<?php echo $fetch_sales['name']; ?>"></td>
-     <td   class=" w-2"> <input type="text" name="name" value="<?php echo $fetch_sales['number']; ?>"></td>
-      <td   class=" w-2"><input type="text" name="name" value="<?php echo $fetch_sales['total_price']; ?>"></td>
-      <td   class=" w-2"><input type="text" name="name" value="<?php echo $fetch_sales['city']; ?>"></td>
-      <td   class=" w-2"> <input type="text" name="name" value="<?php echo $fetch_sales['country']; ?>"></td>
-      <td   class=" w-2"> <input type="text" name="name" value="<?php echo $fetch_sales['street']; ?>"> </td>
-     <td   class=" w-2"> <input type="text" name="name" value="<?php echo $fetch_sales['email']; ?>"> </td>
-     <td   class=" w-2"> <input type="text" name="name" value="<?php echo $fetch_sales['total_products']; ?>"> </td>
-     <td   class=" w-2"> <input type="text" name="name" value="<?php echo $fetch_sales['method']; ?>"> </td>
+     <td   class=" w-2 "> <input type="text" name="user_id" value="<?php echo $fetch_sales['user_id']; ?>"></td>
+      <td   class=" w-2 "><input type="text" name="name" value="<?php echo $fetch_sales['name']; ?>"></td>
+     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['number']; ?>"></td>
+      <td   class=" w-2 "><input type="text" name="name" value="<?php echo $fetch_sales['total_price']; ?>"></td>
+      <td   class=" w-2 "><input type="text" name="name" value="<?php echo $fetch_sales['city']; ?>"></td>
+      <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['country']; ?>"></td>
+      <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['street']; ?>"> </td>
+     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['email']; ?>"> </td>
+     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['total_products']; ?>"> </td>
+     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['method']; ?>"> </td>
 
-     <td   class=" w-2"> <input type="text" name="name" value="<?php echo $fetch_sales['placed_on']; ?>"> </td>
-     <td   class=" w-2"> <input type="text" name="name" value="<?php echo $fetch_sales['payment_status']; ?>"> </td>
+     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['placed_on']; ?>"> </td>
+     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['payment_status']; ?>"> </td>
             </tr>
         </tbody>
     </table>
