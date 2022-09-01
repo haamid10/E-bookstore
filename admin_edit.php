@@ -68,10 +68,8 @@ if(isset($_POST['id']))
 
 </head>
 <body>
-
-
-
-<form action="" method="post">
+<main class="main" id="main">
+   <form action="" method="post">
       <h3>UPDATE NOW</h3>
       <input type="hidden" name="id" placeholder="enter your id" required class="box"></br>
       <input type="text" name="name" placeholder="enter your name" required class="box"></br>
@@ -87,6 +85,8 @@ if(isset($_POST['id']))
       <input type="submit" value="update" name="update_user" class="option-btn">
 
 </form>
+
+</main>
 
 
 </body>
