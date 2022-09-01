@@ -83,7 +83,7 @@ if(isset($_POST['search'])){
                
                 <form action="" method="post"  class="" class="w-32 h-auto text-sm text-left text-black dark:text-gray-400">
     <table class="w-fit" >
-        <thead class="text-xs text-white uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 " >
+        <thead class="text-xs text-black uppercase bg-gray-50  dark:text-gray-400 " >
             <tr class=" w-2">
                
                        <th   scope="col" class="py-1 px-1">user Id</th>       
@@ -139,7 +139,7 @@ if(isset($_POST['search'])){
         }
       ?>
          <div class="text-center">
-                    <button> <a href="admin_sales.php" class="btn btn-primary" id="print-btn">print</a> </button>
+                    <button> <a href="admin_sales.php" class="btn btn-primary" id="print-btn">back</a> </button>
                     <button onclick="window.print();" class="btn btn-primary" id="print-btn">print now</button>
                 </div>
                 

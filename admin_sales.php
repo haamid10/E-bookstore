@@ -181,8 +181,7 @@ if(isset($_POST['search'])){
         }
       ?>
          <div class="text-center">
-                    <button> <a href="admin_search.php" class="btn btn-primary" id="print-btn">Back</a> </button>
-                    <button onclick="window.print();" class="btn btn-primary" id="print-btn">print now</button>
+                    <button> <a href="admin_search.php" class="btn btn-primary" id="print-btn">print</a> </button>
                 </div>
    
  </section>
