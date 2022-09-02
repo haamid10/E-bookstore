@@ -25,13 +25,13 @@ if(isset($_POST['id']))
    $id = $_GET['id'];
    $name = $_POST['name'];
    $email = $_POST['email'];
-   $password = md5($_POST['password']);
+   $password = $_POST['password'];
    $user_type = $_POST['user_type'];
   //  $pass =($connect, md5($_POST['password']));
 
            
    // mysql query to Update data
-   $password = $_POST['password'];
+   $password = md5($_POST['password']);
    $query = "UPDATE `users` SET `name`='".$name."',`email`='".$email."',`password`= '".$password."', `user_type`= '".$user_type."' WHERE `id` = $id";
    
    $result = mysqli_query($conn, $query);
@@ -41,6 +41,7 @@ if(isset($_POST['id']))
      header("location:admin_users.php");
        echo 'Data Updated';
    }else{
+      //   $message[] = 'payment status has been updated!';
        echo 'Data Not Updated';
    }
    mysqli_close($connect);

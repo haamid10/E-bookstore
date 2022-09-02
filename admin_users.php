@@ -145,9 +145,11 @@ if(isset($_POST['search'])){
          <p class="card-title"> user type : <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
          <td>
          <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="btn btn-primary">delete user</a>
-         <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
+         
          </td>
+         
    </form>
+   <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
    <?php
             }
          }else{
