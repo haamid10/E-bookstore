@@ -1,7 +1,7 @@
 <?php
 
 include 'config.php';
-// include 'admin_header.php';
+include 'admin_header.php';
 
 session_start();
 
@@ -21,12 +21,12 @@ if(isset($_POST['add_product'])){
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = 'uploaded_img/'.$image;
 
-   $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$name'") or die('query failed');
+   $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$name'") or die('quer2   y failed');
 
    if(mysqli_num_rows($select_product_name) > 0){
       $message[] = 'product name already added';
    }else{
-      $add_product_query = mysqli_query($conn, "INSERT INTO `products`(name, price, image) VALUES('$name', '$price', '$image')") or die('query failed');
+      $add_product_query = mysqli_query($conn, "INSERT INTO `products`(name, price, image,quantity) VALUES('$name', '$price', '$image','$quantity')") or die('query failed');
 
       if($add_product_query){
          if($image_size > 2000000){
@@ -123,7 +123,7 @@ if(isset($_POST['update_product'])){
 
 <main class="main" id="main">
 
-<section class="section">
+<section class="products">
 
    <h1 class="card-title">shop products</h1>
 
@@ -132,7 +132,7 @@ if(isset($_POST['update_product'])){
       <input type="text" name="name" class="box" placeholder="enter product name" required>
       <input type="number" min="0" name="price" class="box" placeholder="enter product price" required>
       <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box" required>
-      <input type="number" name="quantity"  class="box" required>
+      <input type="number" name="quantity"  placeholder="enter product quantity"  class="box" required>
       <input type="submit" value="add product" name="add_product" class="btn">
    </form>
 
@@ -155,7 +155,7 @@ if(isset($_POST['update_product'])){
          <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <div class="price">$<?php echo $fetch_products['price']; ?></div>
-         <div class="price">$<?php echo $fetch_products['quantity']; ?></div>
+         <div class="quantity">quantity = <?php echo $fetch_products['quantity']; ?></div>
          <a href="admin_products.php?update=<?php echo $fetch_products['id']; ?>" class="option-btn">update</a>
          <a href="admin_products.php?delete=<?php echo $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
       </div>
