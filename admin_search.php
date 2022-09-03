@@ -59,92 +59,133 @@ if(isset($_POST['search'])){
 <body>
   
 
-<section class="section">
-   <form action="" method="post" class="search-form">
-      <input type="text" name="search" placeholder="search products..." >
-      <input type="submit" name="submit" value="search" class="btn">
-   </form>
-   <h2>Summury Report</h2>
-</section>
 
 
 
 
 
-<section class="overflow-x-auto relative shadow-md lg:rounded-lg >
-<?php
-      if(isset($_POST['submit'])){
-         $search_item = $_POST['search'];
-         $select_sales = mysqli_query($conn, "SELECT * FROM `orders` WHERE name LIKE '%{$search_item}%'") or die('query failed');
-         if(mysqli_num_rows($select_sales) > 0){
-         while($fetch_sales = mysqli_fetch_assoc($select_sales)){
-   ?>
 
-               
-                <form action="" method="post"  class="" class="w-32 h-auto t">
-    <table class="w-fit border-1 border-b-10 text-xl text-left text-black" >
-        <thead class="text-xl text-black uppercase bg-gray-50  dark:text-gray-400 " >
-            <tr class=" w-2">
-               
-                       <th   scope="col" class="py-1 px-1">user Id</th>       
-                        <th  scope="col" class="py-2 px-1 " >name</th>          
-                        <th  scope="col" class="py-2 px-1 " >phone</th>
-                        <th  scope="col" class="py-2 px-1 " >price</th>           
-                        <th  scope="col" class="py-2 px-1 " >city</th>          
-                        <th  scope="col" class="py-2 px-1 " >country</th>       
-                        <th  scope="col" class="py-2 px-1 " >street</th>        
-                        <th  scope="col" class="py-2 px-1 " >email</th>         
-                        <th  scope="col" class="py-2 px-1 " >quantity</th>                     
-                        <th  scope="col" class="py-2 px-1 " >payment method</th>
-                        <th  scope="col" class="py-2 px-1 " >placed on</th>     
-                        <th  scope="col" class="py-2 px-1 " >payment status</th>
-            </tr>
-        </thead>
-        <tbody class=" ml-0 gap-2 w-2">
-            <!-- <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="py-4 px-6">
-                    Sliver
-                </td> -->
-                <input type="hidden"   name="total_product" min="1" value="1">
-      <input type="hidden" name="id" value="<?php echo $fetch_sales['id']; ?>">
-     <td   class=" w-2 "> <input type="text" name="user_id" value="<?php echo $fetch_sales['user_id']; ?>"></td>
-      <td   class=" w-2 "><input type="text" name="name" value="<?php echo $fetch_sales['name']; ?>"></td>
-     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['number']; ?>"></td>
-      <td   class=" w-2 "><input type="text" name="name" value="<?php echo $fetch_sales['total_price']; ?>"></td>
-      <td   class=" w-2 "><input type="text" name="name" value="<?php echo $fetch_sales['city']; ?>"></td>
-      <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['country']; ?>"></td>
-      <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['street']; ?>"> </td>
-     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['email']; ?>"> </td>
-     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['total_products']; ?>"> </td>
-     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['method']; ?>"> </td>
 
-     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['placed_on']; ?>"> </td>
-     <td   class=" w-2 "> <input type="text" name="name" value="<?php echo $fetch_sales['payment_status']; ?>"> </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-                </form>
-                <?php
-            }
-         }else{
-            echo '<p ">no result found!</p>';
-         }
-         
-        }else{
-         echo '<p >search something!</p>';
-        }
-      ?>
-         <div class="text-center">
-                    <button> <a href="admin_sales.php" class="btn btn-primary" id="print-btn">back</a> </button>
-                    <button onclick="window.print();" class="btn btn-primary" id="print-btn">print now</button>
+
+
+
+
+
+
+
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h1>SALES REPORT</h1>
+                    </div>
+                    <div class="card-body">
+                    
+                        <form action="" method="GET">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>From Date</label>
+                                        <input type="date" name="from_date" value="<?php if(isset($_GET['from_date'])){ echo $_GET['from_date']; } ?>" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>To Date</label>
+                                        <input type="date" name="to_date" value="<?php if(isset($_GET['to_date'])){ echo $_GET['to_date']; } ?>" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Click to Filter</label> <br>
+                                      <button type="submit" class="btn btn-primary">Filter</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                
 
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>User_Id</th>
+                                    <th>Name</th>
+                                    <th>Number</th>
+                                    <th>Email</th>
+                                    <th>Method</th>
+                                    <th>City</th>
+                                    <th>Total Products</th>
+                                    <th>Total Price</th>
+                                    <th>Placed On</th>
+                                    <th>Payment Status</th>
+                                    <th>Street</th>
+                                    <th>Country</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            
+                            <?php 
+                                
+                                require("config.php");
 
- </section>
+                                if(isset($_GET['from_date']) && isset($_GET['to_date']))
+                                {
+                                    $from_date = $_GET['from_date'];
+                                    $to_date = $_GET['to_date'];
+
+                                    $query = "SELECT * FROM orders WHERE placed_on BETWEEN '$from_date' AND '$to_date' ";
+                                    $query_run = mysqli_query($conn, $query);
+
+                                    if(mysqli_num_rows($query_run) > 0)
+                                    {
+                                        foreach($query_run as $row)
+                                        {
+                                            ?>
+                                            <tr>
+                  <td scope="row"><?php echo $row['user_id'];  ?></td>
+                                <td><?php echo $row['name'];  ?></td>
+                                <td><?php echo $row['number'];  ?></td>
+                                <td><?php echo $row['city'];  ?></td>
+                                <td><?php echo $row['country'];  ?></td>
+                                <td><?php echo $row['street'];  ?></td>
+                                <td><?php echo $row['email'];  ?></td>
+                                <td><?php echo $row['total_products'];  ?></td>
+                                <td><?php echo $row['total_price'];  ?></td>
+                                <td><?php echo $row['payment_status'];  ?></td>
+                                <td><?php echo $row['placed_on'];  ?></td>
+                                <td><?php echo $row['method'];  ?></td>
+                              
+                                
+                  </tr>
+                                           
+                                            <?php
+                                        }
+                                    }
+                                    else
+                                    {
+                                        echo "No Record Found";
+                                    }
+                                }
+                            ?>
+                            </tbody>
+                        </table>
+                        <a class = "printME " href = "javascript:window.print()" > PRINT </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 </body>
 </html>

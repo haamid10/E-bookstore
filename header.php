@@ -78,7 +78,7 @@ echo '<script>document.querySelector(".edit-product-form").style.display = "none
          <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
          <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
             <a href="logout.php" class="delete-btn">logout</a>
-            <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
+            <a href="Profile_edit_form.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
 
             <?php
          }

@@ -1,7 +1,7 @@
 <?php
 
 include 'config.php';
-include 'admin_header.php';
+// include 'admin_header.php';
 
 session_start();
 
@@ -15,6 +15,7 @@ if(isset($_POST['add_product'])){
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $price = $_POST['price'];
+   $quantity = $_POST['quantity'];
    $image = $_FILES['image']['name'];
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
@@ -54,8 +55,10 @@ if(isset($_POST['update_product'])){
    $update_p_id = $_POST['update_p_id'];
    $update_name = $_POST['update_name'];
    $update_price = $_POST['update_price'];
+   $update_quantity = $_POST['update_quantity'];
 
-   mysqli_query($conn, "UPDATE `products` SET name = '$update_name', price = '$update_price' WHERE id = '$update_p_id'") or die('query failed');
+
+   mysqli_query($conn, "UPDATE `products` SET name = '$update_name', price = '$update_price', quantity = '$update_quantity' WHERE id = '$update_p_id'") or die('query failed');
 
    $update_image = $_FILES['update_image']['name'];
    $update_image_tmp_name = $_FILES['update_image']['tmp_name'];
@@ -120,15 +123,16 @@ if(isset($_POST['update_product'])){
 
 <main class="main" id="main">
 
-<section class="add-products">
+<section class="section">
 
-   <h1 class="title">shop products</h1>
+   <h1 class="card-title">shop products</h1>
 
    <form action="" method="post" enctype="multipart/form-data">
       <h3>add product</h3>
       <input type="text" name="name" class="box" placeholder="enter product name" required>
       <input type="number" min="0" name="price" class="box" placeholder="enter product price" required>
       <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box" required>
+      <input type="number" name="quantity"  class="box" required>
       <input type="submit" value="add product" name="add_product" class="btn">
    </form>
 
@@ -151,6 +155,7 @@ if(isset($_POST['update_product'])){
          <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <div class="price">$<?php echo $fetch_products['price']; ?></div>
+         <div class="price">$<?php echo $fetch_products['quantity']; ?></div>
          <a href="admin_products.php?update=<?php echo $fetch_products['id']; ?>" class="option-btn">update</a>
          <a href="admin_products.php?delete=<?php echo $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
       </div>
@@ -178,6 +183,7 @@ if(isset($_POST['update_product'])){
       <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image']; ?>">
       <img src="uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
       <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box" required placeholder="enter product name">
+      <input type="int" name="update_quantity" value="<?php echo $fetch_update['quantity']; ?>" class="box" required placeholder="enter product quantity">
       <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box" required placeholder="enter product price">
       <input type="file" class="box" name="update_image" accept="image/jpg, image/jpeg, image/png">
       <input type="submit" value="update" name="update_product" class="btn">

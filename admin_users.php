@@ -145,11 +145,14 @@ if(isset($_POST['search'])){
          <p class="card-title"> user type : <span style="color:<?php if($fetch_users['user_type'] == 'admin'){ echo 'var(--orange)'; } ?>"><?php echo $fetch_users['user_type']; ?></span> </p>
          <td>
          <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="btn btn-primary">delete user</a>
-         
+
+         <!-- <a href = "admin_edit.php">UPDATE</a>  -->
+
+         <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
+         <!-- <a href = "update_admin.php">UPDATE</a> -->
          </td>
          
    </form>
-   <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
    <?php
             }
          }else{
@@ -192,8 +195,14 @@ if(isset($_POST['search'])){
               <h1 class="card-title"> User-type: <?php echo $fetch_users['user_type']; ?></h1>
               <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="btn btn-primary">delete user</a>
               
+
+              
+         <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
              
-              <a href="admin_edit.php?id=<?php echo $fetch_users['id']; ?> class="card-link"">Update</a>
+         <!-- <a href="admin_edit.php?id=<?php //echo $fetch_users['id']; ?>">Update</a> -->
+
+
+         <!-- <a href = "admin_edit.php">UPDATE</a>  -->
              
             </div>
           </div><!-- End Card with titles, buttons, and links -->
