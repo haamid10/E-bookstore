@@ -123,10 +123,10 @@ if(isset($_POST['update_product'])){
 
 <main class="main" id="main">
 
-<section class="products">
+<section class="card">
 
    <h1 class="card-title">shop products</h1>
-
+   <section class="card-body">
    <form action="" method="post" enctype="multipart/form-data">
       <h3>add product</h3>
       <input type="text" name="name" class="box" placeholder="enter product name" required>
