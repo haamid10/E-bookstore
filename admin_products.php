@@ -126,7 +126,8 @@ if(isset($_POST['update_product'])){
 <section class="card">
 
    <h1 class="card-title">shop products</h1>
-   <section class="card-body">
+   <div class="card-body">
+      <div class="col-md-12">
    <form action="" method="post" enctype="multipart/form-data">
       <h3>add product</h3>
       <input type="text" name="name" class="box" placeholder="enter product name" required>
@@ -135,7 +136,9 @@ if(isset($_POST['update_product'])){
       <input type="number" name="quantity"  placeholder="enter product quantity"  class="box" required>
       <input type="submit" value="add product" name="add_product" class="btn">
    </form>
-
+  
+      </div>
+</div>
 </section>
 
 <!-- product CRUD section ends -->
