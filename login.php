@@ -34,7 +34,8 @@ if(isset($_POST['submit'])){
       
 
    }else{
-      $message[] = 'incorrect email or password!';
+      // <a class = "printME " href = "javascript:window.print()" > PRINT </a>
+      // $message[] = 'incorrect email or password!';
    }
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = mysqli_real_escape_string($conn,md5($_POST['password']));
@@ -103,6 +104,8 @@ if(isset($message)){
 ?>
    
 <div class="form-container">
+
+
 
    <form action="" method="post">
       <h3>login now</h3>

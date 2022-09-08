@@ -10,17 +10,24 @@ if(isset($message)){
    }
 }
 ?>
-<link href="style.css" rel="stylesheet">
 
-
-<body>
 <header class="header">
 
-  
+   <!-- <div class="header-1">
+      <div class="flex">
+         <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+         </div>
+         <p> new <a href="login.php">login</a> | <a href="register.php">register</a> </p>
+      </div>
+   </div> -->
 
    <div class="header-2">
       <div class="flex">
-         <a href="home.php" class="logo">IQRA BOOKS</a>
+         <a href="home.php" class="logo">Iqra Book Store</a>
 
          <nav class="navbar">
             <a href="home.php">home</a>
@@ -37,64 +44,16 @@ if(isset($message)){
             <?php
                $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
                $cart_rows_number = mysqli_num_rows($select_cart_number); 
-
-
             ?>
-
-
-<?php
-include 'config.php';
-session_start();
-   if(isset($_GET['update'])){
-      $update_id = $_POST['id'];
-      $update_name = $POST['name'];
-      $update_password = $POST['password'];
-      $update_query = mysqli_query($conn, "SELECT * FROM `users` WHERE id = '$update_id'") or die('query failed');
-      if(mysqli_num_rows($update_query) > 0){
-         while($fetch_update = mysqli_fetch_assoc($update_query)){
-?>
-<input type="hidden" name="id" value="<?php echo $update_id=$_SESSION['id']; ?>">
-<?php
-
-}
-}
-}else{
-echo '<script>document.querySelector(".edit-product-form").style.display = "none";</script>';
-}
-
-?>
-   
-
-
             <a href="cart.php"> <i class="fas fa-shopping-cart"></i> <span>(<?php echo $cart_rows_number; ?>)</span> </a>
          </div>
-         
-         <?php
-         $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
-         while($fetch_users = mysqli_fetch_assoc($select_users)){
-      ?>
 
          <div class="user-box">
-         <p> username : <span><?php echo $fetch_users['name']; ?></span> </p>
-         <p> email : <span><?php echo $fetch_users['email']; ?></span> </p>
+            <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
+            <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
             <a href="logout.php" class="delete-btn">logout</a>
-            <a href="Profile_edit_form.php?id=<?php echo $fetch_users['id']; ?>">Update</a>
-
-            <?php
-         }
-            ?>
-
          </div>
       </div>
    </div>
-  
-  
+
 </header>
- <!--  -->
-
- 
-   .
-   .
-
-
-</body>
