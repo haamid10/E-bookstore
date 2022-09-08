@@ -10,6 +10,21 @@ if(isset($_POST['submit'])){
    $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
    $user_type = $_POST['user_type'];
 
+    $que = "SELECT * FROM users WHERE email = '$email'";
+    $res = mysqli_query($conn,$que);
+    $cou = mysqli_num_rows ($res);
+
+    if(($cou)>0){
+
+     echo "This user Already Exist";
+
+    }else{
+
+
+    
+
+
+
    $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
 
    if(mysqli_num_rows($select_users) > 0){
@@ -23,7 +38,7 @@ if(isset($_POST['submit'])){
          header('location:login.php');
       }
    }
-
+   }
 }
 
 ?>

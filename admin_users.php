@@ -242,7 +242,7 @@ if(isset($_POST['search'])){
    }
    ?>
    
-  <div class="card mb-3">
+  <!-- <div class="card mb-3">
 
    <div class="card-body">
 
@@ -281,9 +281,9 @@ if(isset($_POST['search'])){
          <option value="user">user</option>
          <option value="admin">admin</option>
       </select>
-    </div>
+    </div> -->
 
-    <div class="col-12">
+    <!-- <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
         <label class="form-check-label" for="acceptTerms">I agree and accept the terms and conditions</label>
@@ -294,7 +294,7 @@ if(isset($_POST['search'])){
       <input class="btn btn-primary w-100" type="submit" name="submit" value="register now" >
 
       <!-- <button class="btn btn-primary w-100" type="submit">Create Account</button> -->
-    </div>
+    </div> -->
 <!-- 
    <form class="box-container" action="" method="post">
       <h3 class="title">Add user</h3>

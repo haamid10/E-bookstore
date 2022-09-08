@@ -14,9 +14,9 @@ session_start();
 // php code to Update data from mysql database Table
 // include 'config.php';
 
-// if(isset($_GET['submit'])){
+header("location:admin_users.php");// if(isset($_GET['submit'])){
 
-if(isset($_POST['id']))
+if(isset($_POST['update_user']))
 {
    include 'config.php';
    
@@ -41,10 +41,12 @@ if(isset($_POST['id']))
      header("location:admin_users.php");
        echo 'Data Updated';
    }else{
-       echo 'Data Not Updated';
-   }
-   mysqli_close($connect);
+      header("location:admin_users.php");
+   }  
+   
+   mysqli_close($conn);
    die();
+   
 }
 
 

@@ -48,10 +48,16 @@ if(isset($_POST['order_btn'])){
       if(mysqli_num_rows($order_query) > 0){
          $message[] = 'order already placed!'; 
          header("location:home.php");
-      }else{
+      }elseif($total_products < $cart_products){
+
+        
          mysqli_query($conn, "INSERT INTO `orders`(user_id, name, number, email, method, city,country,street, total_products, total_price) VALUES('$user_id', '$name', '$number', '$email', '$method', '$city','$country','$street', '$total_products', '$cart_total')") or die('query failed');
          $message[] = 'order placed successfully!';
          mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+         
+      }else{
+         $message[] = 'we didnot have that ammount!';
+
       }
    }
    
@@ -104,11 +110,14 @@ if(isset($_POST['order_btn'])){
 
 </section>
 
+
 <section class="checkout">
 
    <form action="" method="post">
-      <h2>Zaad:+252 063-3917014</h2>
-      <h2>E-dahab:+252 065-3917014</h2>
+   
+   <h3>Zaad:+252 063-3917014</h3>
+      <h3>E-dahab:+252 065-3917014</h3>
+     
       <h3>place your order</h3>
       <div class="flex">
          <div class="inputBox">
@@ -127,8 +136,8 @@ if(isset($_POST['order_btn'])){
          <div class="inputBox">
             <span>payment method :</span>
             <select name="method">
-               <option value="cash on delivery">cash on delivery</option>
-               <option value="zaad">zaad</option>
+               <!-- <option value="cash on delivery">cash on delivery</option> -->
+               <option value="zaad">Zaad</option>
                <option value="edahab">E-dahab</option>
             </select>
          </div>

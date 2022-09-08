@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
 
 :root{
+   
    --purple:#8e44ad;
    --red:#c0392b;
    --orange:#f39c12;
@@ -773,12 +774,14 @@ section{
 }
 
 .checkout form h3{
-   text-align: center;
+   text-align: right;
    margin-bottom: 2rem;
    color:var(--black);
    text-transform: uppercase;
-   font-size: 3rem;
+   font-size: 2rem;
+   background-color: #363532;
 }
+
 
 .checkout form .flex{
    display: flex;
