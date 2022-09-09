@@ -91,8 +91,8 @@ if(isset($message)){
       ?>
 
       <div class="account-box">
-         <p> username : <span><?php echo $_SESSION['employee_name']; ?></span> </p>
-         <p> email : <span><?php echo $_SESSION['employee_email']; ?></span> </p>
+         <p> username : <span><?php echo $_SESSION['name']; ?></span> </p>
+         <p> email : <span><?php echo $_SESSION['email']; ?></span> </p>
          <a href="logout.php" class="delete-btn">logout</a> 
          <div><?php }?></div>
       </div>
