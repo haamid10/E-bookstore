@@ -95,24 +95,25 @@ if(isset($_POST['send'])){
                       
    <form action="" method="post" class="flex flex-col ml-32 mr-24 text-black">
                      
-                            <!-- <label class="block uppercase text-blueGray-500 text-xs font-bold mb-2 ml-1">Full Name</label> -->
-      <input type="text" name="name" required placeholder="enter your name" cols="30" rows="10" class="px-3 py-1 mt-2  uppercase bg-white rounded text-xl text-black shadow focus:outline-none focus:ring w-82 h-16 border-transparent">
+                            <label class="block uppercase text-blueGray-500 text-2xl font-bold mb-2 ml-1">Full Name</label>
+      <input type="text" name="name" required placeholder="enter your name" cols="30" rows="10" class="px-3 py-1 mt-2  uppercase bg-white rounded text-xl text-black shadow focus:outline-none focus:ring w-82 h-16 ease-linear transition-all duration-150 border-transparent">
 
                             <!-- <input placeholder="Full Name" type="text" class="px-3 py-3 text-black bg-white rounded text-sm shadow focus:outline-none focus:ring w-82 ease-linear transition-all duration-150 border-transparent"> -->
                        
-                            <!-- <label class="block uppercase text-blueGray-500 text-xs font-bold mb-2 ml-1">Email</label> -->
-      <input type="email" name="email" required placeholder="enter your email" cols="30" rows="10" class="px-3 py-1 mt-2  uppercase bg-white rounded text-xl text-black shadow focus:outline-none focus:ring w-82 h-16 border-transparent">
+                            <label class="block uppercase text-blueGray-500 text-2xl font-bold mt-2 ml-1 mb-2">Email</label>
+      <input type="email" name="email" required placeholder="enter your email" cols="30" rows="10" class="px-3 py-1 mt-2  uppercase bg-white rounded text-xl text-black shadow focus:outline-none focus:ring w-82 h-16 ease-linear transition-all duration-150 border-transparent">
 
-                            <!-- <input placeholder="Email" type="email" class="px-3 py-3 text-black bg-white rounded text-sm shadow focus:outline-none focus:ring w-82 border-transparent"> -->
+                            <!-- <input placeholder="Email" type="email" class="px-3 py-3 text-black bg-white rounded text-sm shadow focus:outline-none focus:ring w-82 ease-linear transition-all duration-150 border-transparent"> -->
+                            <label class="block uppercase text-blueGray-500 text-2xl font-bold mt-2 ml-1 mb-2">Phone </label>
                         
-      <input type="number" name="number" required placeholder="enter your number" class="px-3 py-1 mt-2 uppercase bg-white rounded text-xl text-black shadow focus:outline-none focus:ring w-82 h-16 border-transparent">
+      <input type="number" name="number" required placeholder="enter your number" class="px-3 py-1 mt-2 uppercase bg-white rounded text-xl text-black shadow focus:outline-none focus:ring w-82 h-16 ease-linear transition-all duration-150 border-transparent">
       
-                            <!-- <label class="block uppercase text-blueGray-500 text-xs font-bold mb-2 ml-1">Message</label> -->
-      <textarea name="message" placeholder="enter your message" id="" cols="30" rows="10"  class="mt-6 px-3 py-3 placeholder-blueGray-400 text-blueGray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-82 border-transparent"></textarea>
+                            <label class="block uppercase text-blueGray-500 text-2xl mt-2 font-bold mb-2 ml-1">Message</label>
+      <textarea name="message" placeholder="enter your message" id="" cols="30" rows="10"  class="mt-6 px-3 py-3 placeholder-blueGray-400 text-blueGray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-82 ease-linear transition-all duration-150 border-transparent"></textarea>
 
-                            <!-- <textarea placeholder="Type a message..." type="textarea" rows="4" cols="80" class="px-3 py-3 placeholder-blueGray-400 text-blueGray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full border-transparent"></textarea> -->
+                            <!-- <textarea placeholder="Type a message..." type="textarea" rows="4" cols="80" class="px-3 py-3 placeholder-blueGray-400 text-blueGray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 border-transparent"></textarea> -->
                      
-      <input type="submit" value="send message" name="send" class="text-xl  px-4 py-2 shadow hover:shadow-md text-black bg-blueGray-800 border-blueGray-800 active:bg-blueGray-900 active:border-blueGray-900 rounded outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold">
+      <input type="submit" value="send message" name="send" class="text-xl  px-4 py-2 shadow hover:shadow-md text-black bg-blueGray-800 border-blueGray-800  bg-blue-700 active:border-blueGray-900 rounded outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold">
 
                          <!-- <button class="text-xs px-4 py-2 shadow hover:shadow-md text-white bg-blueGray-800 border-blueGray-800 active:bg-blueGray-900 active:border-blueGray-900 rounded outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold">Send Message</button> -->
                       </div>
