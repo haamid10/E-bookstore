@@ -14,7 +14,9 @@ session_start();
 // php code to Update data from mysql database Table
 // include 'config.php';
 
-header("location:admin_users.php");// if(isset($_GET['submit'])){
+header("location:admin_users.php");
+
+// if(isset($_GET['submit']))
 
 if(isset($_POST['update_user']))
 {
@@ -32,7 +34,7 @@ if(isset($_POST['update_user']))
            
    // mysql query to Update data
    $password = $_POST['password'];
-   $query = "UPDATE `users` SET `name`='".$name."',`email`='".$email."',`password`= '".$password."', `user_type`= '".$user_type."' WHERE `id` = $id";
+   $query = "UPDATE `users` SET `name`='".$name."',`email`='".$email."',`password`= '".$password."', `user_type`= '".$user_type."' WHERE `id` = '".$id."'";
    
    $result = mysqli_query($conn, $query);
    
@@ -47,6 +49,9 @@ if(isset($_POST['update_user']))
    mysqli_close($conn);
    die();
    
+}else{
+header("location:admin_users.php");
+
 }
 
 

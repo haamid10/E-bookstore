@@ -1,5 +1,8 @@
 <?php
 
+require("../config.php");
+
+
 if(isset($message)){
   foreach($message as $message){
      echo '
@@ -37,17 +40,17 @@ if(isset($message)){
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/admin_style.css">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin_style.css">
 
 
   <!-- =======================================================
@@ -88,8 +91,8 @@ if(isset($message)){
       ?>
 
       <div class="account-box">
-         <p> username : <span><?php echo $_SESSION['admin_name']; ?></span> </p>
-         <p> email : <span><?php echo $_SESSION['admin_email']; ?></span> </p>
+         <p> username : <span><?php echo $_SESSION['employee_name']; ?></span> </p>
+         <p> email : <span><?php echo $_SESSION['employee_email']; ?></span> </p>
          <a href="logout.php" class="delete-btn">logout</a> 
          <div><?php }?></div>
       </div>
@@ -104,30 +107,17 @@ if(isset($message)){
 <ul class="sidebar-nav" id="sidebar-nav">
 
   <li class="nav-item">
-    <a class="nav-link " href="admin_page.php">
+    <a class="nav-link " href="../emp/admin_page.php">
       <i class="bi bi-grid"></i>
       <span>Dashboard</span>
     </a>
   </li><!-- End Dashboard Nav -->
 
   
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="admin_products.php">
-      <i class="bi bi-bar-chart"></i>
-      <span>Products</span>
-    </a>
-  </li>
-  
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="admin_users.php">
-      <i class="bi bi-gem"></i>
-      <span>Users</span>
-    </a>
-  </li>
 
   
   <li class="nav-item">
-    <a class="nav-link collapsed" href="admin_orders.php">
+    <a class="nav-link collapsed" href="../emp/admin_orders.php">
       <i class="bi bi-person"></i>
       <span>orders</span>
     </a>
@@ -135,7 +125,7 @@ if(isset($message)){
 
   
   <li class="nav-item">
-    <a class="nav-link collapsed" href="admin_contacts.php">
+    <a class="nav-link collapsed" href="../emp/admin_contacts.php">
       <i class="bi bi-envelope"></i>
       <span>Messeges</span>
     </a>
@@ -143,7 +133,7 @@ if(isset($message)){
 
   
   <li class="nav-item">
-    <a class="nav-link " href="admin_sales.php">
+    <a class="nav-link " href="../emp/admin_sales.php">
       <i class="bi bi-layout-text-window-reverse"></i>
       <span>sales report</span>
     </a>

@@ -104,6 +104,7 @@ if(isset($_POST['search'])){
         </ol>
       </nav>
     </div>
+    <a href="admin_register.php">ADD NEW USER</a>
 
 
 <!-- search bar -->

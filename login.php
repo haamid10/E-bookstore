@@ -28,6 +28,13 @@ if(isset($_POST['submit'])){
          $_SESSION['user_id'] = $row['id'];
          header('location:home.php');
 
+      }elseif($row['user_type'] == 'employee'){
+
+         $_SESSION['employee_name'] = $row['name'];
+         $_SESSION['employee_email'] = $row['email'];
+         $_SESSION['employee_id'] = $row['id'];
+         header('location:emp/admin_page.php');
+
       }elseif( !md5($_POST['password'])){
          header('location:home.php');
       }
@@ -59,6 +66,14 @@ if(isset($_POST['submit'])){
          $_SESSION['user_email'] = $row['email'];
          $_SESSION['user_id'] = $row['id'];
          header('location:home.php');
+
+      }
+      elseif($row['user_type'] == 'employee'){
+
+         $_SESSION['employee_name'] = $row['name'];
+         $_SESSION['employee_email'] = $row['email'];
+         $_SESSION['employee_id'] = $row['id'];
+         header('location:emp/admin_page.php');
 
       }elseif( !md5($_POST['password'])){
          header('location:home.php');
