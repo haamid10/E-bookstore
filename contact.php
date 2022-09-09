@@ -89,7 +89,7 @@ if(isset($_POST['send'])){
           <div class="flex flex-wrap justify-center ">
              <div class="w-full lg:w-12/24 lg:h-12/24 px-4 ">
                 <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg  ">
-                   <div class="flex-auto p-5 lg:p-10 bg-blue-200">
+                   <div class="flex-auto p-5 lg:p-10 bg-blue-200 rounded-lg" >
                       <h4 class="text-4xl uppercase font-semibold text-center">Want to inform  us?</h4>
                       <p class="leading-relaxed  mt-1 mb-4 text-center text-blueGray-500">Complete this form and we will get back to you in 24 hours.</p>
                       
