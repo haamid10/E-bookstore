@@ -158,7 +158,11 @@ if(!isset($user_id)){
       }
       ?>
    </div>
-   <section class="section">
+
+
+</section>
+
+<section class="section">
 
   <div class="col-lg-16">
    <div class="card">
@@ -207,19 +211,6 @@ if(!isset($user_id)){
                                 <td><?php echo $fetch_orders['placed_on'];  ?></td>
                                 <td><?php echo $fetch_orders['method'];  ?></td>
                                
-            <td> <form action="" method="post">
-               <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>"></td>
-            <td><select name="update_payment">
-               <option value="" selected disabled><?php echo $fetch_orders['payment_status']; ?></option>
-               <option value="pending">pending</option>
-               <option value="completed">completed</option>
-            </select></td>
-         
-           <td> <input type="submit" value="update" name="update_order" class="btn btn-secondary"></td> 
-           <td>   <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('delete this order?');" class="btn btn-primary">delete</a>
-           </form>
-         </td>
-          
             
          
                                 
@@ -238,10 +229,6 @@ if(!isset($user_id)){
           </div>
   </div>
 </section>
-
-</section>
-
-
 
 
 
