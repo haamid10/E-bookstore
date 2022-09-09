@@ -113,7 +113,7 @@ if(isset($_POST['send'])){
 
                             <!-- <textarea placeholder="Type a message..." type="textarea" rows="4" cols="80" class="px-3 py-3 placeholder-blueGray-400 text-blueGray-500 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 border-transparent"></textarea> -->
                      
-      <input type="submit" value="send message" name="send" class="text-xl  px-4 py-2 shadow hover:shadow-md text-black bg-blueGray-800 border-blueGray-800  bg-blue-700 active:border-blueGray-900 rounded outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold">
+      <input type="submit" value="send message" name="send" class="text-xl  px-4 py-2 shadow hover:shadow-md text-white w-48 mx-96 mt-12 rounded-lg border-blueGray-800  bg-blue-700 active:border-blueGray-900 outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold">
 
                          <!-- <button class="text-xs px-4 py-2 shadow hover:shadow-md text-white bg-blueGray-800 border-blueGray-800 active:bg-blueGray-900 active:border-blueGray-900 rounded outline-none focus:outline-none align-middle transition-all duration-150 ease-in-out uppercase border border-solid font-bold">Send Message</button> -->
                       </div>
