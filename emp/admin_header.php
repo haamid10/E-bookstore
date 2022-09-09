@@ -27,7 +27,7 @@ if(isset($message)){
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Admin  </title>
+  <title>Employee  </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -67,8 +67,8 @@ if(isset($message)){
   <header id="header" class="header fixed-top d-flex align-items-center">
 
   <div class="d-flex align-items-center justify-content-between">
-      <a href="admin_page.php" class="logo d-flex align-items-center">
-        <span class="d-none d-lg-block">Iqra books</span>
+      <a href="emp/admin_page.php" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">IQRA BOOKS</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -83,16 +83,17 @@ if(isset($message)){
 
       <div class="nav-item dropdown ">
          <div  id="menu-btn" class="fas fa-bars"></div>
-         <div id="user-btn" class="fas fa-user"> Admin</div>
+         <div id="user-btn" class="fas fa-user"> Employee</div>
       </div>
       <?php
-         $select_users = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
-         while($fetch_users = mysqli_fetch_assoc($select_users)){
+      require("../config.php");
+         $select_user = mysqli_query($conn, "SELECT * FROM `users`") or die('query failed');
+         while($fetch_user = mysqli_fetch_assoc($select_user)){
       ?>
 
       <div class="account-box">
-         <p> username : <span><?php echo $_SESSION['name']; ?></span> </p>
-         <p> email : <span><?php echo $_SESSION['email']; ?></span> </p>
+         <p> username : <span><?php echo $fetch_user['employee_name']; ?></span> </p>
+         <p> email : <span><?php echo $fetch_user['employee_email']; ?></span> </p>
          <a href="logout.php" class="delete-btn">logout</a> 
          <div><?php }?></div>
       </div>

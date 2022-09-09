@@ -30,9 +30,9 @@ if(isset($_POST['submit'])){
 
       }elseif($row['user_type'] == 'employee'){
 
-         $_SESSION['employee_name'] = $row['name'];
-         $_SESSION['employee_email'] = $row['email'];
-         $_SESSION['employee_id'] = $row['id'];
+         $_SESSION['name'] = $row['name'];
+         $_SESSION['email'] = $row['email'];
+         $_SESSION['id'] = $row['id'];
          header('location:emp/admin_page.php');
 
       }elseif( !md5($_POST['password'])){
@@ -70,10 +70,10 @@ if(isset($_POST['submit'])){
       }
       elseif($row['user_type'] == 'employee'){
 
-         $_SESSION['employee_name'] = $row['name'];
-         $_SESSION['employee_email'] = $row['email'];
-         $_SESSION['employee_id'] = $row['id'];
-         header('location:../emp/admin_page.php');
+         $_SESSION['name'] = $row['name'];
+         $_SESSION['email'] = $row['email'];
+         $_SESSION['id'] = $row['id'];
+         header('location:emp/admin_page.php');
 
       }elseif( !md5($_POST['password'])){
          header('location:home.php');
@@ -100,7 +100,7 @@ if(isset($_POST['submit'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="../css/style.css">
 
 </head>
 <body>

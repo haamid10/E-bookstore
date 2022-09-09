@@ -148,27 +148,10 @@ if(isset($_POST['search'])){
                     </div>
                 </div>
 
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>User_Id</th>
-                                    <th>Name</th>
-                                    <th>Number</th>
-                                    <th>Email</th>
-                                    <th>Method</th>
-                                    <th>City</th>
-                                    <th>Total Products</th>
-                                    <th>Total Price</th>
-                                    <th>Placed On</th>
-                                    <th>Payment Status</th>
-                                    <th>Street</th>
-                                    <th>Country</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+              
+                       
+                         
+                            
                             
                             <?php 
                                 
@@ -186,38 +169,20 @@ if(isset($_POST['search'])){
                                     {
                                         foreach($query_run as $row)
                                         {
-                                            ?>
-                                            <tr>
-                  <td scope="row"><?php echo $row['user_id'];  ?></td>
-                                <td><?php echo $row['name'];  ?></td>
-                                <td><?php echo $row['number'];  ?></td>
-                                <td><?php echo $row['city'];  ?></td>
-                                <td><?php echo $row['country'];  ?></td>
-                                <td><?php echo $row['street'];  ?></td>
-                                <td><?php echo $row['email'];  ?></td>
-                                <td><?php echo $row['total_products'];  ?></td>
-                                <td><?php echo $row['total_price'];  ?></td>
-                                <td><?php echo $row['payment_status'];  ?></td>
-                                <td><?php echo $row['placed_on'];  ?></td>
-                                <td><?php echo $row['method'];  ?></td>
-                              
-                                
-                  </tr>
+                //                             ?>
+             
                                            
-                                            <?php
+                                     <?php
                                         }
                                     }
                                     else
                                     {
                                         echo "No Record Found";
                                     }
-                                }
+                                
                             ?>
-                            </tbody>
-                        </table>
-                        <a class = "printME " href = "javascript:window.print()" > PRINT </a>
-                    </div>
-                </div>
+                           
+                 
 
             </div>
         </div>
@@ -269,8 +234,6 @@ if(isset($_POST['search'])){
                                 <td><?php echo $fetch_orders['total_products'];  ?></td>
                                 <td><?php echo $fetch_orders['total_price'];  ?></td>
                                 
-                                
-                                
                                 <td><?php echo $fetch_orders['payment_status'];  ?></td>
                                 <td><?php echo $fetch_orders['placed_on'];  ?></td>
                                 <td><?php echo $fetch_orders['method'];  ?></td>
@@ -285,6 +248,7 @@ if(isset($_POST['search'])){
                             $sn++;
                         }
                       }
+                    }
                     
                         ?>
                 </tbody>
