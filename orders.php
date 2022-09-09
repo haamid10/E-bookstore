@@ -188,11 +188,10 @@ if(!isset($user_id)){
                 </thead>
                 <tbody>
                 <?php
-                        // $sn = 1;
-                        $select_orders = mysqli_query($conn, "SELECT * FROM `orders`") or die('query failed');
-                        if(mysqli_num_rows($select_orders) > 0){
-                           while($fetch_orders = mysqli_fetch_assoc($select_orders)){
-                       ?>
+         $order_query = mysqli_query($conn, "SELECT * FROM `orders` WHERE user_id = '$user_id'") or die('query failed');
+         if(mysqli_num_rows($order_query) > 0){
+            while($fetch_orders = mysqli_fetch_assoc($order_query)){
+      ?>
                   <tr>
                   <td scope="row"><?php echo $fetch_orders['user_id'];  ?></td>
                                 <td><?php echo $fetch_orders['name'];  ?></td>
