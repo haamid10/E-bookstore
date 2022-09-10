@@ -127,7 +127,7 @@ if(isset($_GET['delete_all'])){
             while($fetch_cart = mysqli_fetch_assoc($select_cart)){    -->
       
                 <?php 
-include 'config.php';
+    // include 'config.php';
 
                     $qry = $conn->query("SELECT * FROM `cart` WHERE user_id = '$user_id'")  or die('query failed');
                     if(mysqli_num_rows($qry) >0)
@@ -142,7 +142,9 @@ include 'config.php';
                     <div class="d-flex w-100 justify-content-between  mb-2 py-2 border-bottom cart-item">
                         <div class="d-flex align-items-center col-8">
                             <span class="mr-2"><a href="javascript:void(0)" class="btn btn-sm btn-outline-danger rem_item" data-id="<?php echo $row['id'] ?>"><i class="fa fa-trash"></i></a></span>
-                            <img src=" <?php echo $row['image']; ?>" loading="lazy" class="cart-prod-img mr-2 mr-sm-2" alt="">
+         <img src="uploaded_img/<?php echo $fetch_cart['image']; ?>" alt="">
+
+                            <img src="uploaded_img/<?php echo $fetch_cart['image']; ?>"  alt="">
                             <div>
                                 <p class="mb-1 mb-sm-1"><?php echo $row['name'] ?></p>
                                 
@@ -183,6 +185,10 @@ include 'config.php';
     </div>
 </section>
 
+
+
+
+<!-- new one -->
 
 
 
