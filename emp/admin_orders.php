@@ -164,7 +164,7 @@ if(isset($_GET['delete'])){
   </div>
 </section>
 
-</section>
+
 
 
 </main>
