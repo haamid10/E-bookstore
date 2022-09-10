@@ -129,22 +129,22 @@ if(isset($_GET['delete_all'])){
                 <?php 
     // include 'config.php';
 
-                    $qry = $conn->query("SELECT * FROM `cart` WHERE user_id = '$user_id'")  or die('query failed');
+                    $qry = mysqli_query($conn,"SELECT * FROM `cart` WHERE user_id = '$user_id'")  or die('query failed');
                     if(mysqli_num_rows($qry) >0)
                     while($row= mysqli_fetch_assoc($qry)){
                         // $upload_path = base_app.'/uploads/product_'.$row['pid'];
                         // $img = "";
-                        // foreach($row as $k=> $v){
-                        //     $row[$k] = trim(stripslashes($v));
-                        // }
+                        foreach($row as $k=> $v){
+                            $row[$k] = trim(stripslashes($v));
+                        }
                        
                 ?>
                     <div class="d-flex w-100 justify-content-between  mb-2 py-2 border-bottom cart-item">
                         <div class="d-flex align-items-center col-8">
                             <span class="mr-2"><a href="javascript:void(0)" class="btn btn-sm btn-outline-danger rem_item" data-id="<?php echo $row['id'] ?>"><i class="fa fa-trash"></i></a></span>
-         <img src="uploaded_img/<?php echo $fetch_cart['image']; ?>" alt="">
+         <img src="uploaded_img/<?php echo $row['image']; ?>" alt="">
 
-                            <img src="uploaded_img/<?php echo $fetch_cart['image']; ?>"  alt="">
+                            <!-- <img src="uploaded_img/<?php echo $fetch_cart['image']; ?>"  alt=""> -->
                             <div>
                                 <p class="mb-1 mb-sm-1"><?php echo $row['name'] ?></p>
                                 
