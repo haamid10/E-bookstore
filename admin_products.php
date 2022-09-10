@@ -21,7 +21,7 @@ if(isset($_POST['add_product'])){
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = 'uploaded_img/'.$image;
 
-   $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$name'") or die('quer2   y failed');
+   $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$name'") or die('query failed');
 
    if(mysqli_num_rows($select_product_name) > 0){
       // $message[] = 'product name already added';
@@ -190,8 +190,7 @@ if(isset($_POST['update_product'])){
          if(mysqli_num_rows($update_query) > 0){
             while($fetch_update = mysqli_fetch_assoc($update_query)){
    ?>
-   <form action="" class="w-32 h-fit
-    mt-0 overflow-scroll scroll-m-4" method="post" enctype="multipart/form-data">
+   <form action="" class=" fex flex-col w-fit bg-blue-100 h-auto mt-0 overflow-scroll scroll-m-4" method="post" enctype="multipart/form-data">
       <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id']; ?>">
       <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image']; ?>">
       <img src="uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
