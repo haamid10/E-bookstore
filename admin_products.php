@@ -24,8 +24,11 @@ if(isset($_POST['add_product'])){
    $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$name'") or die('quer2   y failed');
 
    if(mysqli_num_rows($select_product_name) > 0){
-      $message[] = 'product name already added';
+      // $message[] = 'product name already added';
+      echo '<script>alert("product name already added");</script>';
+
    }else{
+      
       $add_product_query = mysqli_query($conn, "INSERT INTO `products`(name, price, image,quantity) VALUES('$name', '$price', '$image','$quantity')") or die('query failed');
 
       if($add_product_query){
@@ -65,6 +68,8 @@ if(isset($_POST['update_product'])){
    $update_image_size = $_FILES['update_image']['size'];
    $update_folder = 'uploaded_img/'.$update_image;
    $update_old_image = $_POST['update_old_image'];
+   header('location:admin_products.php');
+
 
    if(!empty($update_image)){
       if($update_image_size > 2000000){
@@ -76,6 +81,9 @@ if(isset($_POST['update_product'])){
       }
    }
 
+   // else{
+   //    echo("nothun is workin");
+   // }
    header('location:admin_products.php');
 
 }
@@ -130,7 +138,7 @@ if(isset($_POST['update_product'])){
       <div class="col-md-12">
    <form action="" method="post" enctype="multipart/form-data">
       <h3>add product</h3>
-      <input type="text" name="name" class="box" placeholder="enter product name" required>
+      <input type="text" name="name" class="" placeholder="enter product name" required>
       <input type="number" min="0" name="price" class="box" placeholder="enter product price" required>
       <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box" required>
       <input type="number" name="quantity"  placeholder="enter product quantity"  class="box" required>
@@ -170,9 +178,10 @@ if(isset($_POST['update_product'])){
       ?>
    </div>
 
-</section>
 
-<section class="edit-product-form">
+   </section>
+<div class="edit-product-form   flex flex-col w-fit h-auto bg-blue-100">
+   <div class="col-lg-72">
 
    <?php
       if(isset($_GET['update'])){
@@ -181,31 +190,36 @@ if(isset($_POST['update_product'])){
          if(mysqli_num_rows($update_query) > 0){
             while($fetch_update = mysqli_fetch_assoc($update_query)){
    ?>
-   <form action="" method="post" enctype="multipart/form-data">
+   <form action="" class="w-32 h-fit
+    mt-0 overflow-scroll scroll-m-4" method="post" enctype="multipart/form-data">
       <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id']; ?>">
       <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image']; ?>">
       <img src="uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
-      <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box" required placeholder="enter product name">
-      <input type="int" name="update_quantity" value="<?php echo $fetch_update['quantity']; ?>" class="box" required placeholder="enter product quantity">
-      <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box" required placeholder="enter product price">
-      <input type="file" class="box" name="update_image" accept="image/jpg, image/jpeg, image/png">
+      <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="" required placeholder="enter product name">
+      <input type="int" name="update_quantity" value="<?php echo $fetch_update['quantity']; ?>" class="" required placeholder="enter product quantity">
+      <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="" required placeholder="enter product price">
+      <input type="file" class="" name="update_image" accept="image/jpg, image/jpeg, image/png">
       <input type="submit" value="update" name="update_product" class="btn">
       <input type="reset" value="cancel" id="close-update" class="option-btn">
    </form>
    <?php
-         }
+   header('location:admin_products.php');
+
+            }
+   header('location:admin_products.php');
+
       }
       }else{
          echo '<script>document.querySelector(".edit-product-form").style.display = "none";</script>';
       }
    ?>
 
-</section>
+   </div>
 
 
 
 
-
+   </main>
 
 
 <!-- custom admin js file link  -->
