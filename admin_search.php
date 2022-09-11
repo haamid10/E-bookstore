@@ -61,18 +61,6 @@ if(isset($_POST['search'])){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     
     <div class="container">
         <div class="row justify-content-center">
