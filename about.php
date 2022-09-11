@@ -41,6 +41,30 @@ if(!isset($user_id)){
 
   
 
+   <main class=" ">
+     <div class="sm:text-center lg:text-left">
+       <h1 class="text-2xl text-left font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+         <span class="block xl:inline capitalize">Visit us </span>
+         <span class="block text-indigo-600 xl:inline">to Grow your mind</span>
+       </h1>
+       <p class="mt-3 text-center  text-gray-500  mr-32">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+       
+     </div>
+     
+   </main>
+   <div class="image">
+      <img class="rounded-tr-l  rounded-t-2xl" src="./uploaded_img/l1.jpg" alt="">
+   </div>
+</div>
+
+<!-- one  -->
+
+
+<div class="flex">
+
+ <div class="image mt-16">
+      <img class="rounded-tr-l  rounded-t-2xl" src="./uploaded_img/l3.jpg" alt="">
+   </div>
    <main class=" mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
      <div class="sm:text-center lg:text-left">
        <h1 class="text-2xl text-right font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
@@ -52,9 +76,7 @@ if(!isset($user_id)){
      </div>
      
    </main>
-   <div class="image">
-      <img class="rounded-tr-l  rounded-t-2xl" src="./uploaded_img/books.jpg" alt="">
-   </div>
+ 
 </div>
 
 </section> 
