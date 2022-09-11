@@ -49,10 +49,7 @@ if(isset($_POST['add_to_cart'])){
    
 <?php include 'header.php'; ?>
 
-<div class="heading">
-   <h3>search page</h3>
-   <p> <a href="home.php">home</a> / search </p>
-</div>
+
 
 <section class="search-form">
    <form action="" method="post">
